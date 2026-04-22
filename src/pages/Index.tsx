@@ -9,8 +9,8 @@ const Index = () => {
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-primary/5" dir="rtl">
       <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center shadow-lg">
-            <MessageCircle className="w-5 h-5 text-white" />
+          <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center shadow-lg">
+            <MessageCircle className="w-5 h-5 text-primary-foreground" />
           </div>
           <span className="font-bold text-lg">Predator WhatsApp</span>
         </div>
@@ -38,7 +38,7 @@ const Index = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a href="https://t.me/DevAhmed_ZDA" target="_blank" rel="noreferrer">
-              <Button size="lg" className="gap-2 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700">
+              <Button size="lg" className="gap-2">
                 <MessageCircle className="w-5 h-5" />
                 ابدأ من تلجرام الآن
                 <ArrowLeft className="w-4 h-4" />
@@ -93,7 +93,7 @@ const Index = () => {
 
 const Step = ({ number, icon: Icon, title, desc }: any) => (
   <div className="relative rounded-2xl border bg-card p-6 hover:shadow-lg transition-shadow">
-    <div className="absolute -top-4 right-6 w-10 h-10 rounded-full bg-gradient-to-br from-green-500 to-emerald-600 text-white font-bold flex items-center justify-center shadow-lg">
+    <div className="absolute -top-4 right-6 w-10 h-10 rounded-full bg-primary text-primary-foreground font-bold flex items-center justify-center shadow-lg">
       {number}
     </div>
     <Icon className="w-10 h-10 text-primary mb-4 mt-2" />

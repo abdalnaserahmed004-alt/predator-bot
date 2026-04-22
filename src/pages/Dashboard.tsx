@@ -12,11 +12,12 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@
 import { Badge } from '@/components/ui/badge';
 import { Switch } from '@/components/ui/switch';
 import { toast } from 'sonner';
-import { Bot, LogOut, Send, MessageSquare, Users, Terminal, Ban, CheckCircle2, Trash2 } from 'lucide-react';
+import { Bot, LogOut, Send, MessageSquare, Users, Terminal, Ban, CheckCircle2, Trash2, Smartphone } from 'lucide-react';
 
 interface Msg { id: string; chat_id: number; direction: 'in' | 'out'; text: string | null; created_at: string; }
 interface TUser { id: string; chat_id: number; username: string | null; first_name: string | null; is_blocked: boolean; last_seen_at: string; }
 interface Cmd { id: string; command: string; response: string; enabled: boolean; }
+interface WALinked { id: string; telegram_chat_id: number; full_name: string; phone_number: string; governorate: string; status: string; pairing_code: string | null; last_connected_at: string | null; last_error: string | null; created_at: string; }
 
 export default function Dashboard() {
   const { user, isAdmin, loading, signOut } = useAuth();
@@ -24,6 +25,7 @@ export default function Dashboard() {
   const [messages, setMessages] = useState<Msg[]>([]);
   const [users, setUsers] = useState<TUser[]>([]);
   const [commands, setCommands] = useState<Cmd[]>([]);
+  const [waUsers, setWaUsers] = useState<WALinked[]>([]);
 
   const [sendChatId, setSendChatId] = useState('');
   const [sendText, setSendText] = useState('');
@@ -38,23 +40,27 @@ export default function Dashboard() {
   }, [user, loading, isAdmin, nav]);
 
   const loadAll = async () => {
-    const [m, u, c] = await Promise.all([
+    const [m, u, c, w] = await Promise.all([
       supabase.from('telegram_messages').select('*').order('created_at', { ascending: false }).limit(100),
       supabase.from('telegram_users').select('*').order('last_seen_at', { ascending: false }),
       supabase.from('bot_commands').select('*').order('created_at', { ascending: false }),
+      supabase.from('whatsapp_linked_users').select('*').order('created_at', { ascending: false }),
     ]);
     if (m.data) setMessages(m.data as any);
     if (u.data) setUsers(u.data as any);
     if (c.data) setCommands(c.data as any);
+    if (w.data) setWaUsers(w.data as any);
   };
 
   useEffect(() => {
     if (!isAdmin) return;
     loadAll();
-    const ch = supabase.channel('msgs').on('postgres_changes',
-      { event: 'INSERT', schema: 'public', table: 'telegram_messages' },
-      (p) => setMessages((prev) => [p.new as any, ...prev].slice(0, 100))
-    ).subscribe();
+    const ch = supabase.channel('msgs')
+      .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'telegram_messages' },
+        (p) => setMessages((prev) => [p.new as any, ...prev].slice(0, 100)))
+      .on('postgres_changes', { event: '*', schema: 'public', table: 'whatsapp_linked_users' },
+        () => loadAll())
+      .subscribe();
     return () => { supabase.removeChannel(ch); };
   }, [isAdmin]);
 
