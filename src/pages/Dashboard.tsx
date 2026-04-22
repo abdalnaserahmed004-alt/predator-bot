@@ -111,6 +111,18 @@ export default function Dashboard() {
     await supabase.from('bot_commands').delete().eq('id', id); loadAll();
   };
 
+  const delWa = async (id: string) => {
+    if (!confirm('حذف هذا المستخدم نهائياً؟')) return;
+    await supabase.from('whatsapp_linked_users').delete().eq('id', id);
+    loadAll();
+  };
+
+  const waBadgeVariant = (s: string): any => {
+    if (s === 'connected') return 'default';
+    if (s === 'failed' || s === 'disconnected') return 'destructive';
+    return 'secondary';
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <header className="border-b bg-card">
@@ -134,13 +146,54 @@ export default function Dashboard() {
           <Card><CardContent className="pt-6"><p className="text-xs text-muted-foreground">الأوامر</p><p className="text-2xl font-bold">{commands.length}</p></CardContent></Card>
         </div>
 
-        <Tabs defaultValue="messages">
-          <TabsList className="grid grid-cols-4 w-full max-w-2xl">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-3 mb-6">
+          <Card><CardContent className="pt-6"><p className="text-xs text-muted-foreground">مستخدمو تلجرام</p><p className="text-2xl font-bold">{users.length}</p></CardContent></Card>
+          <Card><CardContent className="pt-6"><p className="text-xs text-muted-foreground">واتساب مربوط</p><p className="text-2xl font-bold text-primary">{waUsers.filter(w => w.status === 'connected').length}</p></CardContent></Card>
+          <Card><CardContent className="pt-6"><p className="text-xs text-muted-foreground">الرسائل</p><p className="text-2xl font-bold">{messages.length}</p></CardContent></Card>
+          <Card><CardContent className="pt-6"><p className="text-xs text-muted-foreground">المحظورون</p><p className="text-2xl font-bold">{users.filter(u => u.is_blocked).length}</p></CardContent></Card>
+          <Card><CardContent className="pt-6"><p className="text-xs text-muted-foreground">الأوامر</p><p className="text-2xl font-bold">{commands.length}</p></CardContent></Card>
+        </div>
+
+        <Tabs defaultValue="whatsapp">
+          <TabsList className="grid grid-cols-5 w-full max-w-3xl">
+            <TabsTrigger value="whatsapp"><Smartphone className="w-4 h-4 mr-1" />واتساب</TabsTrigger>
             <TabsTrigger value="messages"><MessageSquare className="w-4 h-4 mr-1" />الرسائل</TabsTrigger>
             <TabsTrigger value="send"><Send className="w-4 h-4 mr-1" />إرسال</TabsTrigger>
-            <TabsTrigger value="users"><Users className="w-4 h-4 mr-1" />المستخدمون</TabsTrigger>
+            <TabsTrigger value="users"><Users className="w-4 h-4 mr-1" />مستخدمون</TabsTrigger>
             <TabsTrigger value="commands"><Terminal className="w-4 h-4 mr-1" />أوامر</TabsTrigger>
           </TabsList>
+
+          <TabsContent value="whatsapp">
+            <Card>
+              <CardHeader><CardTitle>مستخدمو واتساب المربوطون</CardTitle></CardHeader>
+              <CardContent>
+                <div className="overflow-auto">
+                  <Table>
+                    <TableHeader><TableRow>
+                      <TableHead>الاسم</TableHead><TableHead>الرقم</TableHead><TableHead>المحافظة</TableHead>
+                      <TableHead>الحالة</TableHead><TableHead>الكود</TableHead><TableHead>آخر اتصال</TableHead><TableHead></TableHead>
+                    </TableRow></TableHeader>
+                    <TableBody>
+                      {waUsers.map(w => (
+                        <TableRow key={w.id}>
+                          <TableCell className="font-medium">{w.full_name}</TableCell>
+                          <TableCell className="font-mono text-xs">{w.phone_number}</TableCell>
+                          <TableCell>{w.governorate}</TableCell>
+                          <TableCell><Badge variant={waBadgeVariant(w.status)}>{w.status}</Badge></TableCell>
+                          <TableCell className="font-mono text-xs">{w.pairing_code ?? '—'}</TableCell>
+                          <TableCell className="text-xs">{w.last_connected_at ? new Date(w.last_connected_at).toLocaleString('ar') : '—'}</TableCell>
+                          <TableCell>
+                            <Button size="sm" variant="ghost" onClick={() => delWa(w.id)}><Trash2 className="w-4 h-4" /></Button>
+                          </TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                  {waUsers.length === 0 && <p className="text-center text-muted-foreground py-8">لا يوجد مستخدمون بعد</p>}
+                </div>
+              </CardContent>
+            </Card>
+          </TabsContent>
 
           <TabsContent value="messages">
             <Card><CardHeader><CardTitle>آخر الرسائل (مباشر)</CardTitle></CardHeader><CardContent>
