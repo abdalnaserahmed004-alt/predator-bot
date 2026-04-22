@@ -12,11 +12,12 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@
 import { Badge } from '@/components/ui/badge';
 import { Switch } from '@/components/ui/switch';
 import { toast } from 'sonner';
-import { Bot, LogOut, Send, MessageSquare, Users, Terminal, Ban, CheckCircle2, Trash2 } from 'lucide-react';
+import { Bot, LogOut, Send, MessageSquare, Users, Terminal, Ban, CheckCircle2, Trash2, Smartphone } from 'lucide-react';
 
 interface Msg { id: string; chat_id: number; direction: 'in' | 'out'; text: string | null; created_at: string; }
 interface TUser { id: string; chat_id: number; username: string | null; first_name: string | null; is_blocked: boolean; last_seen_at: string; }
 interface Cmd { id: string; command: string; response: string; enabled: boolean; }
+interface WALinked { id: string; telegram_chat_id: number; full_name: string; phone_number: string; governorate: string; status: string; pairing_code: string | null; last_connected_at: string | null; last_error: string | null; created_at: string; }
 
 export default function Dashboard() {
   const { user, isAdmin, loading, signOut } = useAuth();
@@ -24,6 +25,7 @@ export default function Dashboard() {
   const [messages, setMessages] = useState<Msg[]>([]);
   const [users, setUsers] = useState<TUser[]>([]);
   const [commands, setCommands] = useState<Cmd[]>([]);
+  const [waUsers, setWaUsers] = useState<WALinked[]>([]);
 
   const [sendChatId, setSendChatId] = useState('');
   const [sendText, setSendText] = useState('');
@@ -38,23 +40,27 @@ export default function Dashboard() {
   }, [user, loading, isAdmin, nav]);
 
   const loadAll = async () => {
-    const [m, u, c] = await Promise.all([
+    const [m, u, c, w] = await Promise.all([
       supabase.from('telegram_messages').select('*').order('created_at', { ascending: false }).limit(100),
       supabase.from('telegram_users').select('*').order('last_seen_at', { ascending: false }),
       supabase.from('bot_commands').select('*').order('created_at', { ascending: false }),
+      supabase.from('whatsapp_linked_users').select('*').order('created_at', { ascending: false }),
     ]);
     if (m.data) setMessages(m.data as any);
     if (u.data) setUsers(u.data as any);
     if (c.data) setCommands(c.data as any);
+    if (w.data) setWaUsers(w.data as any);
   };
 
   useEffect(() => {
     if (!isAdmin) return;
     loadAll();
-    const ch = supabase.channel('msgs').on('postgres_changes',
-      { event: 'INSERT', schema: 'public', table: 'telegram_messages' },
-      (p) => setMessages((prev) => [p.new as any, ...prev].slice(0, 100))
-    ).subscribe();
+    const ch = supabase.channel('msgs')
+      .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'telegram_messages' },
+        (p) => setMessages((prev) => [p.new as any, ...prev].slice(0, 100)))
+      .on('postgres_changes', { event: '*', schema: 'public', table: 'whatsapp_linked_users' },
+        () => loadAll())
+      .subscribe();
     return () => { supabase.removeChannel(ch); };
   }, [isAdmin]);
 
@@ -105,6 +111,18 @@ export default function Dashboard() {
     await supabase.from('bot_commands').delete().eq('id', id); loadAll();
   };
 
+  const delWa = async (id: string) => {
+    if (!confirm('حذف هذا المستخدم نهائياً؟')) return;
+    await supabase.from('whatsapp_linked_users').delete().eq('id', id);
+    loadAll();
+  };
+
+  const waBadgeVariant = (s: string): any => {
+    if (s === 'connected') return 'default';
+    if (s === 'failed' || s === 'disconnected') return 'destructive';
+    return 'secondary';
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <header className="border-b bg-card">
@@ -121,20 +139,54 @@ export default function Dashboard() {
       </header>
 
       <main className="container mx-auto px-4 py-6">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
-          <Card><CardContent className="pt-6"><p className="text-xs text-muted-foreground">المستخدمون</p><p className="text-2xl font-bold">{users.length}</p></CardContent></Card>
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-3 mb-6">
+          <Card><CardContent className="pt-6"><p className="text-xs text-muted-foreground">مستخدمو تلجرام</p><p className="text-2xl font-bold">{users.length}</p></CardContent></Card>
+          <Card><CardContent className="pt-6"><p className="text-xs text-muted-foreground">واتساب مربوط</p><p className="text-2xl font-bold text-primary">{waUsers.filter(w => w.status === 'connected').length}</p></CardContent></Card>
           <Card><CardContent className="pt-6"><p className="text-xs text-muted-foreground">الرسائل</p><p className="text-2xl font-bold">{messages.length}</p></CardContent></Card>
           <Card><CardContent className="pt-6"><p className="text-xs text-muted-foreground">المحظورون</p><p className="text-2xl font-bold">{users.filter(u => u.is_blocked).length}</p></CardContent></Card>
           <Card><CardContent className="pt-6"><p className="text-xs text-muted-foreground">الأوامر</p><p className="text-2xl font-bold">{commands.length}</p></CardContent></Card>
         </div>
 
-        <Tabs defaultValue="messages">
-          <TabsList className="grid grid-cols-4 w-full max-w-2xl">
+        <Tabs defaultValue="whatsapp">
+          <TabsList className="grid grid-cols-5 w-full max-w-3xl">
+            <TabsTrigger value="whatsapp"><Smartphone className="w-4 h-4 mr-1" />واتساب</TabsTrigger>
             <TabsTrigger value="messages"><MessageSquare className="w-4 h-4 mr-1" />الرسائل</TabsTrigger>
             <TabsTrigger value="send"><Send className="w-4 h-4 mr-1" />إرسال</TabsTrigger>
-            <TabsTrigger value="users"><Users className="w-4 h-4 mr-1" />المستخدمون</TabsTrigger>
+            <TabsTrigger value="users"><Users className="w-4 h-4 mr-1" />مستخدمون</TabsTrigger>
             <TabsTrigger value="commands"><Terminal className="w-4 h-4 mr-1" />أوامر</TabsTrigger>
           </TabsList>
+
+          <TabsContent value="whatsapp">
+            <Card>
+              <CardHeader><CardTitle>مستخدمو واتساب المربوطون</CardTitle></CardHeader>
+              <CardContent>
+                <div className="overflow-auto">
+                  <Table>
+                    <TableHeader><TableRow>
+                      <TableHead>الاسم</TableHead><TableHead>الرقم</TableHead><TableHead>المحافظة</TableHead>
+                      <TableHead>الحالة</TableHead><TableHead>الكود</TableHead><TableHead>آخر اتصال</TableHead><TableHead></TableHead>
+                    </TableRow></TableHeader>
+                    <TableBody>
+                      {waUsers.map(w => (
+                        <TableRow key={w.id}>
+                          <TableCell className="font-medium">{w.full_name}</TableCell>
+                          <TableCell className="font-mono text-xs">{w.phone_number}</TableCell>
+                          <TableCell>{w.governorate}</TableCell>
+                          <TableCell><Badge variant={waBadgeVariant(w.status)}>{w.status}</Badge></TableCell>
+                          <TableCell className="font-mono text-xs">{w.pairing_code ?? '—'}</TableCell>
+                          <TableCell className="text-xs">{w.last_connected_at ? new Date(w.last_connected_at).toLocaleString('ar') : '—'}</TableCell>
+                          <TableCell>
+                            <Button size="sm" variant="ghost" onClick={() => delWa(w.id)}><Trash2 className="w-4 h-4" /></Button>
+                          </TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                  {waUsers.length === 0 && <p className="text-center text-muted-foreground py-8">لا يوجد مستخدمون بعد</p>}
+                </div>
+              </CardContent>
+            </Card>
+          </TabsContent>
 
           <TabsContent value="messages">
             <Card><CardHeader><CardTitle>آخر الرسائل (مباشر)</CardTitle></CardHeader><CardContent>
