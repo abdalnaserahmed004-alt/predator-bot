@@ -41,6 +41,30 @@ export type Database = {
         }
         Relationships: []
       }
+      governorates: {
+        Row: {
+          created_at: string
+          id: number
+          name_ar: string
+          name_en: string
+          sort_order: number
+        }
+        Insert: {
+          created_at?: string
+          id?: number
+          name_ar: string
+          name_en: string
+          sort_order?: number
+        }
+        Update: {
+          created_at?: string
+          id?: number
+          name_ar?: string
+          name_en?: string
+          sort_order?: number
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           created_at: string
@@ -170,6 +194,98 @@ export type Database = {
         }
         Relationships: []
       }
+      whatsapp_link_sessions: {
+        Row: {
+          created_at: string
+          full_name: string | null
+          governorate: string | null
+          id: string
+          linked_user_id: string | null
+          phone_number: string | null
+          step: Database["public"]["Enums"]["whatsapp_session_step"]
+          telegram_chat_id: number
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          full_name?: string | null
+          governorate?: string | null
+          id?: string
+          linked_user_id?: string | null
+          phone_number?: string | null
+          step?: Database["public"]["Enums"]["whatsapp_session_step"]
+          telegram_chat_id: number
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          full_name?: string | null
+          governorate?: string | null
+          id?: string
+          linked_user_id?: string | null
+          phone_number?: string | null
+          step?: Database["public"]["Enums"]["whatsapp_session_step"]
+          telegram_chat_id?: number
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "whatsapp_link_sessions_linked_user_id_fkey"
+            columns: ["linked_user_id"]
+            isOneToOne: false
+            referencedRelation: "whatsapp_linked_users"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      whatsapp_linked_users: {
+        Row: {
+          created_at: string
+          full_name: string
+          governorate: string
+          id: string
+          last_connected_at: string | null
+          last_error: string | null
+          pairing_code: string | null
+          pairing_code_expires_at: string | null
+          phone_number: string
+          session_id: string | null
+          status: Database["public"]["Enums"]["whatsapp_link_status"]
+          telegram_chat_id: number
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          full_name: string
+          governorate: string
+          id?: string
+          last_connected_at?: string | null
+          last_error?: string | null
+          pairing_code?: string | null
+          pairing_code_expires_at?: string | null
+          phone_number: string
+          session_id?: string | null
+          status?: Database["public"]["Enums"]["whatsapp_link_status"]
+          telegram_chat_id: number
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          full_name?: string
+          governorate?: string
+          id?: string
+          last_connected_at?: string | null
+          last_error?: string | null
+          pairing_code?: string | null
+          pairing_code_expires_at?: string | null
+          phone_number?: string
+          session_id?: string | null
+          status?: Database["public"]["Enums"]["whatsapp_link_status"]
+          telegram_chat_id?: number
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
@@ -185,6 +301,18 @@ export type Database = {
     }
     Enums: {
       app_role: "admin" | "user"
+      whatsapp_link_status:
+        | "pending"
+        | "awaiting_code"
+        | "connected"
+        | "disconnected"
+        | "failed"
+      whatsapp_session_step:
+        | "name"
+        | "phone"
+        | "governorate"
+        | "awaiting_code"
+        | "completed"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -313,6 +441,20 @@ export const Constants = {
   public: {
     Enums: {
       app_role: ["admin", "user"],
+      whatsapp_link_status: [
+        "pending",
+        "awaiting_code",
+        "connected",
+        "disconnected",
+        "failed",
+      ],
+      whatsapp_session_step: [
+        "name",
+        "phone",
+        "governorate",
+        "awaiting_code",
+        "completed",
+      ],
     },
   },
 } as const
