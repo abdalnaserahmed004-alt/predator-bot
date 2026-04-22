@@ -139,13 +139,6 @@ export default function Dashboard() {
       </header>
 
       <main className="container mx-auto px-4 py-6">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
-          <Card><CardContent className="pt-6"><p className="text-xs text-muted-foreground">المستخدمون</p><p className="text-2xl font-bold">{users.length}</p></CardContent></Card>
-          <Card><CardContent className="pt-6"><p className="text-xs text-muted-foreground">الرسائل</p><p className="text-2xl font-bold">{messages.length}</p></CardContent></Card>
-          <Card><CardContent className="pt-6"><p className="text-xs text-muted-foreground">المحظورون</p><p className="text-2xl font-bold">{users.filter(u => u.is_blocked).length}</p></CardContent></Card>
-          <Card><CardContent className="pt-6"><p className="text-xs text-muted-foreground">الأوامر</p><p className="text-2xl font-bold">{commands.length}</p></CardContent></Card>
-        </div>
-
         <div className="grid grid-cols-2 md:grid-cols-5 gap-3 mb-6">
           <Card><CardContent className="pt-6"><p className="text-xs text-muted-foreground">مستخدمو تلجرام</p><p className="text-2xl font-bold">{users.length}</p></CardContent></Card>
           <Card><CardContent className="pt-6"><p className="text-xs text-muted-foreground">واتساب مربوط</p><p className="text-2xl font-bold text-primary">{waUsers.filter(w => w.status === 'connected').length}</p></CardContent></Card>
