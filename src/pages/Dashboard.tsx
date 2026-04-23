@@ -218,7 +218,35 @@ export default function Dashboard() {
             </Card>
           </TabsContent>
 
-          <TabsContent value="messages">
+          <TabsContent value="devs">
+            <Card>
+              <CardHeader><CardTitle>أرقام المطورين (Owners)</CardTitle></CardHeader>
+              <CardContent>
+                <div className="grid md:grid-cols-3 gap-3 mb-4">
+                  <div><Label>رقم الواتساب</Label><Input placeholder="مثلاً 201012345678" value={newDevPhone} onChange={(e) => setNewDevPhone(e.target.value)} /></div>
+                  <div><Label>الاسم (اختياري)</Label><Input value={newDevName} onChange={(e) => setNewDevName(e.target.value)} /></div>
+                  <div className="flex items-end"><Button onClick={addDev} className="w-full">إضافة مطور</Button></div>
+                </div>
+                <Table>
+                  <TableHeader><TableRow><TableHead>الرقم</TableHead><TableHead>الاسم</TableHead><TableHead>الحالة</TableHead><TableHead>تمت الإضافة</TableHead><TableHead></TableHead></TableRow></TableHeader>
+                  <TableBody>
+                    {devs.map(d => (
+                      <TableRow key={d.id}>
+                        <TableCell className="font-mono text-xs">{d.phone_number}</TableCell>
+                        <TableCell>{d.display_name ?? '—'}</TableCell>
+                        <TableCell><Switch checked={d.is_active} onCheckedChange={() => toggleDev(d)} /></TableCell>
+                        <TableCell className="text-xs">{new Date(d.created_at).toLocaleDateString('ar')}</TableCell>
+                        <TableCell><Button size="sm" variant="ghost" onClick={() => delDev(d.id)}><Trash2 className="w-4 h-4" /></Button></TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
+                {devs.length === 0 && <p className="text-center text-muted-foreground py-8">لا يوجد مطورون</p>}
+              </CardContent>
+            </Card>
+          </TabsContent>
+
+
             <Card><CardHeader><CardTitle>آخر الرسائل (مباشر)</CardTitle></CardHeader><CardContent>
               <div className="space-y-2 max-h-[60vh] overflow-auto">
                 {messages.map(m => (
