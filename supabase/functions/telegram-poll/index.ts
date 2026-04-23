@@ -362,9 +362,20 @@ Deno.serve(async (req) => {
       body: JSON.stringify({ offset: currentOffset, timeout, allowed_updates: ['message'] }),
     });
 
-    const data = await response.json();
+    const rawText = await response.text();
+    let data: any = null;
+    try {
+      data = JSON.parse(rawText);
+    } catch {
+      console.error('getUpdates non-JSON response', response.status, rawText.slice(0, 200));
+      // Wait a bit and continue polling instead of crashing
+      await new Promise((r) => setTimeout(r, 2000));
+      continue;
+    }
     if (!response.ok) {
-      return new Response(JSON.stringify({ error: data }), { status: 502, headers: corsHeaders });
+      console.error('getUpdates error', response.status, data);
+      await new Promise((r) => setTimeout(r, 2000));
+      continue;
     }
     const updates = data.result ?? [];
     if (updates.length === 0) continue;
