@@ -1,90 +1,82 @@
-# Predator WhatsApp — External Server (Railway/VPS)
+# 亗 WEKA_7_BOT — External WhatsApp Server 亗
 
-هذا المجلد يحتوي على **كود السيرفر الخارجي** الذي يتصل بواتساب باستخدام مكتبة **Baileys**.
-**لا يعمل داخل Lovable** — يجب تشغيله على Railway أو Render أو VPS.
+بوت واتساب كامل مبني على **meowsab** (Baileys framework) مع 80+ plugin جاهز.
+يربط مع Lovable عشان مستخدمين تلجرام يقدروا يربطوا أرقامهم كـ sub-bots.
 
-## 🎯 ما يفعله هذا السيرفر
+## 🚀 النشر على Railway
 
-1. يستقبل طلبات `/pair` من Lovable (تحتوي على رقم الهاتف).
-2. يتصل بواتساب عبر Baileys ويُولِّد **Pairing Code من 8 خانات**.
-3. يُرجع الكود لـ Lovable ليبعته بوت التلجرام للمستخدم.
-4. بعد ما المستخدم يُدخل الكود في واتساب، Baileys يُبلّغ السيرفر بالنجاح.
-5. السيرفر يُنبّه Lovable عبر webhook → Lovable يُرسِل رسالة تأكيد للمستخدم في تلجرام.
-6. يحفظ جلسات Baileys على القرص لكل رقم (كل رقم له فولدر).
+### 1. ارفع الفولدر ده على GitHub
+ضيف فولدر `whatsapp-server/` كـ ريبو منفصل أو ضمن نفس الريبو.
 
-## 📦 المتغيرات البيئية المطلوبة (Environment Variables)
+### 2. اعمل New Project على Railway
+- اختار **Deploy from GitHub repo**
+- لو رفعت الفولدر داخل نفس الريبو، حدد **Root Directory** = `whatsapp-server`
 
-على Railway أضف هذه المتغيرات في **Variables tab**:
+### 3. اضبط Environment Variables
 
 | المتغير | القيمة |
 |---------|--------|
-| `PORT` | `3000` (Railway يحدده تلقائياً غالباً) |
+| `PORT` | يُحدّد تلقائياً |
 | `API_SECRET` | **نفس قيمة** `WHATSAPP_SERVER_SECRET` في Lovable |
 | `LOVABLE_WEBHOOK_URL` | `https://mzyghqssnfjxtzdreurl.supabase.co/functions/v1/whatsapp-webhook` |
+| `MAIN_PHONE` | `201210155616` (رقم البوت الرئيسي) |
 
-## 🚀 خطوات النشر على Railway
+### 4. ضيف Volume (مهم!)
+Railway → Settings → Volumes → Add Volume → Mount path: `/app/sessions`
+ده بيخلّي الجلسات تتحفظ ومتتلغيش لما السيرفر يـ restart.
 
-1. اذهب إلى https://railway.app وسجل دخول بـ GitHub.
-2. **New Project → Deploy from GitHub repo** واختر ريبو `predator-bot` (أو ارفع هذا المجلد كريبو جديد).
-3. في الريبو، ضع `package.json` و `server.js` المرفقين تحت.
-4. في Railway أضف الـ Variables المذكورة فوق.
-5. بعد النشر، انسخ الـ URL العام (مثل `https://predator-bot-production.up.railway.app`).
-6. **في Lovable**: حدِّث الـ secret `WHATSAPP_SERVER_URL` بهذا الـ URL.
+### 5. خد الـ URL العام
+بعد النشر هيطلعلك URL زي:
+`https://weka-7-bot-production.up.railway.app`
 
-## 🔌 API المطلوب من السيرفر
+ارجع لـ Lovable → Connectors → Settings وحدّث الـ secret `WHATSAPP_SERVER_URL` بالـ URL ده.
 
-### `POST /pair`
-Lovable يبعت:
+## 🔌 API Endpoints
+
+### `GET /`
+Health check.
 ```json
-{
-  "phone_number": "201012345678",
-  "telegram_chat_id": 123456789,
-  "full_name": "أحمد علي",
-  "governorate": "القاهرة"
-}
-```
-السيرفر يرجّع:
-```json
-{
-  "pairing_code": "1234ABCD",
-  "session_id": "session_201012345678"
-}
+{ "ok": true, "service": "weka-7-bot", "subBotsReady": true }
 ```
 
-### `POST /logout`
-Lovable يبعت:
+### `POST /pair` — يحتاج `x-api-key` header
+```json
+// Request
+{ "phone_number": "201012345678", "telegram_chat_id": 123456789, "full_name": "أحمد" }
+
+// Response
+{ "pairing_code": "1234ABCD", "session_id": "session_201012345678" }
+```
+
+### `POST /logout` — يحتاج `x-api-key` header
 ```json
 { "phone_number": "201012345678" }
 ```
-السيرفر يفصل الجهاز.
 
-### Webhook → Lovable
-لما يحصل event مهم (connected / disconnected / failed)، السيرفر يبعت `POST` لـ `LOVABLE_WEBHOOK_URL` بـ header:
-```
-X-Api-Key: <API_SECRET>
-Content-Type: application/json
-```
-Body:
+### `GET /status/:phone` — يحتاج `x-api-key` header
 ```json
-{
-  "phone_number": "201012345678",
-  "event": "connected",
-  "session_id": "session_201012345678"
-}
+{ "active": true }
 ```
 
-## 📝 كود جاهز للنسخ
+## 📂 هيكل الكود
 
-راجع الملفات التالية في نفس المجلد:
-- `package.json`
-- `server.js`
-- `Dockerfile` (اختياري، Railway يشتغل بدونه)
-
----
+```
+whatsapp-server/
+├── server.js          ← Entry point (HTTP + bot startup)
+├── index.js           ← (احتياطي) تشغيل البوت بدون HTTP
+├── sub.js             ← منطق SubBots القديم (للمرجع)
+├── package.json
+├── system/
+│   ├── UltraDB.js     ← قاعدة بيانات JSON محلية
+│   ├── control.js     ← نظام الترحيب والصلاحيات
+│   ├── utils.js       ← stickers, GIF, AI, إلخ
+│   └── database.json  ← البيانات
+└── plugins/           ← 80 أمر جاهز (admins, ai, games, downloads...)
+```
 
 ## ⚠️ ملاحظات مهمة
 
-- **Baileys لازم يفضّل شغال 24/7** — لو السيرفر نام، كل الأجهزة هتتفصل.
-- **استخدم Railway Volume** لحفظ فولدر `sessions/` بشكل دائم (مش في RAM).
-- لا تُشارك `API_SECRET` علنياً.
-- واتساب بيعتبر كل رقم "جهاز مصاحب" إضافي، فيه حد أقصى 4 أجهزة لكل حساب.
+- **الجلسات لازم تتحفظ على Volume** عشان متتلغيش.
+- البوت الرئيسي (`MAIN_PHONE`) لازم يتربط أول مرة عبر QR/pair code يدوياً من اللوجز.
+- بعدها أي sub-bot من تلجرام بيتربط تلقائياً.
+- السيرفر **لازم يفضّل شغال 24/7** (Railway hobby plan كافي للبداية).

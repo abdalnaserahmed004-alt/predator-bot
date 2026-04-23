@@ -12,12 +12,13 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@
 import { Badge } from '@/components/ui/badge';
 import { Switch } from '@/components/ui/switch';
 import { toast } from 'sonner';
-import { Bot, LogOut, Send, MessageSquare, Users, Terminal, Ban, CheckCircle2, Trash2, Smartphone } from 'lucide-react';
+import { Bot, LogOut, Send, MessageSquare, Users, Terminal, Ban, CheckCircle2, Trash2, Smartphone, ShieldCheck } from 'lucide-react';
 
 interface Msg { id: string; chat_id: number; direction: 'in' | 'out'; text: string | null; created_at: string; }
 interface TUser { id: string; chat_id: number; username: string | null; first_name: string | null; is_blocked: boolean; last_seen_at: string; }
 interface Cmd { id: string; command: string; response: string; enabled: boolean; }
 interface WALinked { id: string; telegram_chat_id: number; full_name: string; phone_number: string; governorate: string; status: string; pairing_code: string | null; last_connected_at: string | null; last_error: string | null; created_at: string; }
+interface Dev { id: string; phone_number: string; display_name: string | null; is_active: boolean; notes: string | null; created_at: string; }
 
 export default function Dashboard() {
   const { user, isAdmin, loading, signOut } = useAuth();
@@ -26,6 +27,7 @@ export default function Dashboard() {
   const [users, setUsers] = useState<TUser[]>([]);
   const [commands, setCommands] = useState<Cmd[]>([]);
   const [waUsers, setWaUsers] = useState<WALinked[]>([]);
+  const [devs, setDevs] = useState<Dev[]>([]);
 
   const [sendChatId, setSendChatId] = useState('');
   const [sendText, setSendText] = useState('');
@@ -34,22 +36,27 @@ export default function Dashboard() {
   const [newCmd, setNewCmd] = useState('');
   const [newResp, setNewResp] = useState('');
 
+  const [newDevPhone, setNewDevPhone] = useState('');
+  const [newDevName, setNewDevName] = useState('');
+
   useEffect(() => {
     if (!loading && !user) nav('/auth');
     if (!loading && user && !isAdmin) toast.error('ليس لديك صلاحيات Admin');
   }, [user, loading, isAdmin, nav]);
 
   const loadAll = async () => {
-    const [m, u, c, w] = await Promise.all([
+    const [m, u, c, w, d] = await Promise.all([
       supabase.from('telegram_messages').select('*').order('created_at', { ascending: false }).limit(100),
       supabase.from('telegram_users').select('*').order('last_seen_at', { ascending: false }),
       supabase.from('bot_commands').select('*').order('created_at', { ascending: false }),
       supabase.from('whatsapp_linked_users').select('*').order('created_at', { ascending: false }),
+      supabase.from('bot_developers').select('*').order('created_at', { ascending: false }),
     ]);
     if (m.data) setMessages(m.data as any);
     if (u.data) setUsers(u.data as any);
     if (c.data) setCommands(c.data as any);
     if (w.data) setWaUsers(w.data as any);
+    if (d.data) setDevs(d.data as any);
   };
 
   useEffect(() => {
@@ -117,6 +124,28 @@ export default function Dashboard() {
     loadAll();
   };
 
+  const addDev = async () => {
+    const phone = newDevPhone.trim().replace(/\D/g, '');
+    if (!phone) return toast.error('أدخل رقم صحيح');
+    const { error } = await supabase.from('bot_developers').insert({
+      phone_number: phone,
+      display_name: newDevName.trim() || null,
+    });
+    if (error) return toast.error(error.message);
+    setNewDevPhone(''); setNewDevName(''); toast.success('تم إضافة المطور'); loadAll();
+  };
+
+  const toggleDev = async (d: Dev) => {
+    await supabase.from('bot_developers').update({ is_active: !d.is_active }).eq('id', d.id);
+    loadAll();
+  };
+
+  const delDev = async (id: string) => {
+    if (!confirm('حذف هذا المطور؟')) return;
+    await supabase.from('bot_developers').delete().eq('id', id);
+    loadAll();
+  };
+
   const waBadgeVariant = (s: string): any => {
     if (s === 'connected') return 'default';
     if (s === 'failed' || s === 'disconnected') return 'destructive';
@@ -148,8 +177,9 @@ export default function Dashboard() {
         </div>
 
         <Tabs defaultValue="whatsapp">
-          <TabsList className="grid grid-cols-5 w-full max-w-3xl">
+          <TabsList className="grid grid-cols-6 w-full max-w-4xl">
             <TabsTrigger value="whatsapp"><Smartphone className="w-4 h-4 mr-1" />واتساب</TabsTrigger>
+            <TabsTrigger value="devs"><ShieldCheck className="w-4 h-4 mr-1" />مطورون</TabsTrigger>
             <TabsTrigger value="messages"><MessageSquare className="w-4 h-4 mr-1" />الرسائل</TabsTrigger>
             <TabsTrigger value="send"><Send className="w-4 h-4 mr-1" />إرسال</TabsTrigger>
             <TabsTrigger value="users"><Users className="w-4 h-4 mr-1" />مستخدمون</TabsTrigger>
@@ -184,6 +214,34 @@ export default function Dashboard() {
                   </Table>
                   {waUsers.length === 0 && <p className="text-center text-muted-foreground py-8">لا يوجد مستخدمون بعد</p>}
                 </div>
+              </CardContent>
+            </Card>
+          </TabsContent>
+
+          <TabsContent value="devs">
+            <Card>
+              <CardHeader><CardTitle>أرقام المطورين (Owners)</CardTitle></CardHeader>
+              <CardContent>
+                <div className="grid md:grid-cols-3 gap-3 mb-4">
+                  <div><Label>رقم الواتساب</Label><Input placeholder="مثلاً 201012345678" value={newDevPhone} onChange={(e) => setNewDevPhone(e.target.value)} /></div>
+                  <div><Label>الاسم (اختياري)</Label><Input value={newDevName} onChange={(e) => setNewDevName(e.target.value)} /></div>
+                  <div className="flex items-end"><Button onClick={addDev} className="w-full">إضافة مطور</Button></div>
+                </div>
+                <Table>
+                  <TableHeader><TableRow><TableHead>الرقم</TableHead><TableHead>الاسم</TableHead><TableHead>الحالة</TableHead><TableHead>تمت الإضافة</TableHead><TableHead></TableHead></TableRow></TableHeader>
+                  <TableBody>
+                    {devs.map(d => (
+                      <TableRow key={d.id}>
+                        <TableCell className="font-mono text-xs">{d.phone_number}</TableCell>
+                        <TableCell>{d.display_name ?? '—'}</TableCell>
+                        <TableCell><Switch checked={d.is_active} onCheckedChange={() => toggleDev(d)} /></TableCell>
+                        <TableCell className="text-xs">{new Date(d.created_at).toLocaleDateString('ar')}</TableCell>
+                        <TableCell><Button size="sm" variant="ghost" onClick={() => delDev(d.id)}><Trash2 className="w-4 h-4" /></Button></TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
+                {devs.length === 0 && <p className="text-center text-muted-foreground py-8">لا يوجد مطورون</p>}
               </CardContent>
             </Card>
           </TabsContent>

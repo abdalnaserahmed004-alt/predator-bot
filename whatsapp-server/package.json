@@ -1,18 +1,35 @@
 {
-  "name": "predator-whatsapp-server",
-  "version": "1.0.0",
-  "description": "External WhatsApp server using Baileys — connects to Lovable via HTTP API",
+  "name": "weka-7-bot",
+  "version": "2.0.0",
+  "description": "亗 WEKA_7_BOT - WhatsApp Bot Framework 亗",
   "main": "server.js",
+  "type": "module",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "bot": "node index.js"
   },
+  "keywords": [
+    "whatsapp-bot",
+    "weka-7-bot"
+  ],
+  "author": "Ahmed_wek7",
+  "license": "MIT",
   "engines": {
     "node": ">=20"
   },
   "dependencies": {
-    "@whiskeysockets/baileys": "^6.7.9",
+    "meowsab": "https://github.com/deveni0/ws/tarball/main",
+    "sharp": "https://github.com/deveni0/sharp-tmx/tarball/main",
+    "cheerio": "1.0.0-rc.12",
+    "chokidar": "^5.0.0",
+    "file-type": "^18.0.0",
+    "form-data": "^4.0.5",
+    "qs": "*",
+    "wa-sticker-formatter": "^4.3.2",
     "express": "^4.19.2",
-    "pino": "^9.4.0",
-    "qrcode-terminal": "^0.12.0"
+    "axios": "^1.7.7"
+  },
+  "overrides": {
+    "sharp": "https://github.com/deveni0/sharp-tmx/tarball/main"
   }
 }

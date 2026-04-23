@@ -41,6 +41,36 @@ export type Database = {
         }
         Relationships: []
       }
+      bot_developers: {
+        Row: {
+          created_at: string
+          display_name: string | null
+          id: string
+          is_active: boolean
+          notes: string | null
+          phone_number: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          display_name?: string | null
+          id?: string
+          is_active?: boolean
+          notes?: string | null
+          phone_number: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          display_name?: string | null
+          id?: string
+          is_active?: boolean
+          notes?: string | null
+          phone_number?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       governorates: {
         Row: {
           created_at: string
