@@ -246,7 +246,7 @@ export default function Dashboard() {
             </Card>
           </TabsContent>
 
-
+          <TabsContent value="messages">
             <Card><CardHeader><CardTitle>آخر الرسائل (مباشر)</CardTitle></CardHeader><CardContent>
               <div className="space-y-2 max-h-[60vh] overflow-auto">
                 {messages.map(m => (
