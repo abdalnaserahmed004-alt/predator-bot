@@ -1,5 +1,5 @@
 const run = async (m, { args, conn, bot }) => {
-  // رسالة قصف الجبهة للمطور أحمد عبد الناصر
+  // رسالة قصف الجبهة للالمطور احمد_wek7 عبد الناصر
   const roast = "⚠️ جـاي تـشـغـل بـوت عـمـك *أحـمـد عـبـد الـنـاصـر* يـا كـلـب؟ 😂🐕\n\n*الـسـيـطـرة لـلـمـفـتـرس فـقـط.. مـلـوك الـمـجـال مـش بـتـوع عـيـال!* 🦅🔥";
 
   if (global.db.noSub) return m.reply("❌ عـمـك أحـمـد قـافـل الـتـنـصـيب عـشـان مـحـدش يـهـرتـل!");
@@ -81,21 +81,21 @@ const Func = {
       bodyText: `
 ${roast}
 *╭───────────────╮*
-*│  亗 𝐏𝐑𝐄𝐃𝐀𝐓𝐎𝐑 𝐒𝐘𝐒𝐓𝐄𝐌 亗 │*
+*│  亗 𝐖𝐄𝐊𝐀_𝟕 𝐒𝐘𝐒𝐓𝐄𝐌 亗 │*
 *╰───────────────╯*
 
 📱 الرقم: ${num}
 🔑 الكود: ${code}
 
 > *_افتح واتساب > الأجهزة المرتبطة > ربط جهاز برقم الهاتف > أدخل الكود يا بطل_*`,
-      footerText: "亗 𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃 𝐂𝐎𝐍𝐓𝐑𝐎𝐋 亗",
+      footerText: "亗 𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 𝐂𝐎𝐍𝐓𝐑𝐎𝐋 亗",
       buttons: [
         { name: "cta_copy", params: { display_text: "🛡️ نسخ الكود", copy_code: code } },
         { name: "cta_url", params: { display_text: "🦅 قناة الدمار", url: "https://whatsapp.com/channel/0029Vb7KY1K0VycEfL11c12a" } },
       ],
       mentions: [m.sender],
       newsletter: {
-        name: '亗 𝐏𝐑𝐄𝐃𝐀𝐓𝐎𝐑 𝐔𝐏𝐃𝐀𝐓𝐄𝐒 亗',
+        name: '亗 𝐖𝐄𝐊𝐀_𝟕 𝐔𝐏𝐃𝐀𝐓𝐄𝐒 亗',
         jid: '120363225356834044@newsletter'
       }
     }, global.reply_status);
@@ -104,11 +104,11 @@ ${roast}
   ready: async (conn, num, m, img) => {
     await m.react("🔥");
     await conn.sendMessage(m.chat, {
-      text: `✅ *تـم الـتـنـصـيـب بـنـجـاح يـا تـابـع!*\n\n📱 الـرقـم: ${num}\n\n*الآن أنـت تـحـت سـيـطـرة الـ Predator وجـاهـز لـلـتدمـيـر!* 🦅🏴‍☠️`,
+      text: `✅ *تـم الـتـنـصـيـب بـنـجـاح يـا تـابـع!*\n\n📱 الـرقـم: ${num}\n\n*الآن أنـت تـحـت سـيـطـرة الـ Weka_7 وجـاهـز لـلـتدمـيـر!* 🦅🏴‍☠️`,
       contextInfo: {
         externalAdReply: {
           title: "亗 𝐏𝐑𝐄𝐃𝐀𝐓𝐎𝐑 𝐀𝐈 𝐀𝐂𝐓𝐈𝐕𝐀𝐓𝐄𝐃 亗",
-          body: "🦅 Power by Ahmed Abdel Nasser",
+          body: "🦅 Power by Ahmed_wek7",
           thumbnailUrl: img,
           sourceUrl: 'https://whatsapp.com/channel/0029Vb7KY1K0VycEfL11c12a',
           mediaType: 1,

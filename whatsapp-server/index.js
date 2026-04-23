@@ -1,6 +1,6 @@
-/* * 亗 𝐏𝐑𝐄𝐃𝐀𝐓𝐎𝐑 𝐀𝐈 - 𝐕𝟐 𝐏𝐑𝐎 𝐄𝐃𝐈𝐓𝐈𝐎𝐍 亗
+/* * 亗 𝐖𝐄𝐊𝐀_𝟕_𝐁𝐎𝐓 亗
  * -------------------------------------------
- * 🛠️ Developer : Ahmed Abdel Nasser (Dev Ahmed)
+ * 🛠️ Developer : Ahmed_wek7
  * 🛡️ Status: Public & Ultra Fast
  */
 
@@ -12,7 +12,7 @@ import fs from 'fs';
 
 // إعدادات المطور والسرعة
 const botConfig = {
-    phoneNumber: '201554582851', // رقمك الأساسي يا أحمد
+    phoneNumber: '201210155616', // رقمك الأساسي يا مطور
     prefix: [".", "/", "!"],
     fromMe: false, // خليها false عشان البوت يرد على الناس مش بس على رسايلك
     online: true,
@@ -27,7 +27,7 @@ const client = new Client({
     fromMe: botConfig.fromMe,
     owners: [
         {
-            name: "亗 𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃 亗",
+            name: "亗 𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 亗",
             jid: `${botConfig.phoneNumber}@s.whatsapp.net`,
             lid: "276711958704275@lid"
         }
@@ -53,17 +53,17 @@ global.client = client; // عشان تقدر تستخدم الكلاينت في 
 
 // معلومات الهوية والقناة (البصمة الشخصية)
 client.config.info = {
-    nameBot: "亗 𝐏𝐑𝐄𝐃𝐀𝐓𝐎𝐑 𝐀𝐈 亗",
-    nameChannel: "亗 𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃 𝐒𝐘𝐒𝐓𝐄𝐌 亗 🦅",
+    nameBot: "亗 𝐖𝐄𝐊𝐀_𝟕_𝐁𝐎𝐓 亗",
+    nameChannel: "亗 𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 亗 🦅",
     idChannel: "120363225356834044@newsletter",
     urls: {
-        repo: "https://github.com/Ahmed-ZDA/Predator-AI",
-        channel: "https://whatsapp.com/channel/0029VaQim2bAu3aPsRVaDq3v",
-        telegram: "https://t.me/DevAhmed_ZDA"
+        repo: "https://github.com/abdalnaserahmed_wek7004-alt/weka_7-bot",
+        channel: "https://whatsapp.com/channel/0029Vb7KY1K0VycEfL11c12a",
+        telegram: "https://t.me/DevAhmed_wek7_ZDA"
     },
     copyright: {
-        pack: '亗 𝐏𝐑𝐄𝐃𝐀𝐓𝐎𝐑 𝐀𝐈 亗',
-        author: '𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃'
+        pack: '亗 𝐖𝐄𝐊𝐀_𝟕_𝐁𝐎𝐓 亗',
+        author: '𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕'
     },
     images: ["https://i.pinimg.com/originals/e2/21/20/e221203f319df949ee65585a657501a2.jpg"]
 };
@@ -89,9 +89,9 @@ function clearTmp() {
 async function startBot() {
     try {
         console.clear();
-        process.stdout.write('\x1b]2;亗 PREDATOR AI - DEV AHMED 亗\x07'); // تغيير اسم نافذة الترمكس
+        process.stdout.write('\x1b]2;亗 WEKA_7_BOT - DEV AHMED_WEK7 亗\x07'); // تغيير اسم نافذة الترمكس
         
-        console.log("\x1b[36m%s\x1b[0m", "🔄 Connecting Predator System to WhatsApp...");
+        console.log("\x1b[36m%s\x1b[0m", "🔄 Connecting Weka_7 System to WhatsApp...");
         
         await client.start();
         
@@ -99,8 +99,8 @@ async function startBot() {
         setTimeout(async () => {
             if (client.commandSystem) {
                 console.log("\x1b[35m%s\x1b[0m", "================================================");
-                console.log("\x1b[32m[+] 亗 𝐏𝐑𝐄𝐃𝐀𝐓𝐎𝐑 𝐀𝐈 亗 IS LIVE! 🚀\x1b[0m");
-                console.log("\x1b[36m[!] MASTER : AHMED ABDEL NASSER 🦅\x1b[0m");
+                console.log("\x1b[32m[+] 亗 𝐖𝐄𝐊𝐀_𝟕_𝐁𝐎𝐓 亗 IS LIVE! 🚀\x1b[0m");
+                console.log("\x1b[36m[!] MASTER : AHMED_WEK7 ABDEL NASSER 🦅\x1b[0m");
                 console.log("\x1b[33m[!] STATUS : PUBLIC MODE (ALL CHATS) ✅\x1b[0m");
                 console.log("\x1b[35m%s\x1b[0m", "================================================");
                 

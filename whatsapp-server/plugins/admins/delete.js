@@ -1,7 +1,7 @@
 const handler = async (m, { conn, command }) => {
-  const isOwner = m.sender.includes("201554582851");
+  const isOwner = m.sender.includes("201210155616");
 
-  // حركة المطور أحمد (يا عم المجال) لو نسي يعمل ريبلاي
+  // حركة الالمطور احمد_wek7 (يا عم المجال) لو نسي يعمل ريبلاي
   if (!m.quoted && isOwner) {
     return m.reply("يا عم المجال.. ركز شوية! 😅 عايزني أمسح إيه؟ الهوا؟ رد على الرسالة اللي مش عاجباك يا دكتور! 🦅🩺");
   }
@@ -31,7 +31,7 @@ const handler = async (m, { conn, command }) => {
     const randomMsg = deleteSnaps[Math.floor(Math.random() * deleteSnaps.length)];
     
     // إرسال رسالة تأكيد بتختفي بعد 5 ثواني (لو عندك ميزة الحذف التلقائي)
-    console.log(`[!] Dev Ahmed deleted a message in: ${m.chat}`);
+    console.log(`[!] Ahmed_wek7 deleted a message in: ${m.chat}`);
 
   } catch (e) {
     m.reply("❌ شكل الرسالة دي محمية ولا إيه؟ غالباً ناقصني صلاحيات أدمن يا ديف! 🚮");

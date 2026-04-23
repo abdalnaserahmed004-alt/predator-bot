@@ -1,12 +1,12 @@
-/* =========== 亗 PREDATOR AI - EYE RADAR 亗 ===========
- * 🛠️ Developer : Ahmed Abdel Nasser (Dev Ahmed)
+/* =========== 亗 WEKA_7_BOT - EYE RADAR 亗 ===========
+ * 🛠️ Developer : Ahmed_wek7
  * 📱 WhatsApp  : 201210155616
- * 📢 Channel   : 亗 𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃 𝐓𝐒𝐇𝐀𝐍𝐀𝐋 亗
+ * 📢 Channel   : 亗 𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 亗
  * 👁️ Component : Anime Eye Recognition Protocol ⚡
  * ======================================================== */
 
 const MAX_ROUNDS = 10;
-const devName = "Ahmed Abdel Nasser";
+const devName = "Ahmed_wek7";
 const myChannel = "https://whatsapp.com/channel/0029Vb7KY1K0VycEfL11c12a";
 const myPic = 'https://telegra.ph/file/0680061e89b456e70a7b4.jpg'; // صورتك الفخمة
 
@@ -50,7 +50,7 @@ const handler = async (m, { conn }) => {
         return `┃ ${prize.emoji} @${id.split('@')[0]} ➪ ${score} نـقـطة (+${prize.xp}xp)`;
       });
       
-      const winMsg = `╭─┈─┈─┈─⟞亗⟝─┈─┈─┈─╮\n  *🏆 مـجـزرة الـعـيـون انـتـهـت*\n╰─┈─┈─┈─⟞亗⟝─┈─┈─┈─╯\n\n👑 *بـتـصـريـح مـن الـقـائد ${devName}:*\n${prizes.join('\n')}\n\n╭─┈─┈─┈─⟞🦅⟝─┈─┈─┈─╮\n   *تـم تـوزيع الـغـنائم بـنجاح* 🚮\n   *مملكة الـ Predator تـسيطر!*\n╰─┈─┈─⟞👞⟝─┈─┈─┈─╯`;
+      const winMsg = `╭─┈─┈─┈─⟞亗⟝─┈─┈─┈─╮\n  *🏆 مـجـزرة الـعـيـون انـتـهـت*\n╰─┈─┈─┈─⟞亗⟝─┈─┈─┈─╯\n\n👑 *بـتـصـريـح مـن الـقـائد ${devName}:*\n${prizes.join('\n')}\n\n╭─┈─┈─┈─⟞🦅⟝─┈─┈─┈─╮\n   *تـم تـوزيع الـغـنائم بـنجاح* 🚮\n   *مملكة الـ Weka_7 تـسيطر!*\n╰─┈─┈─⟞👞⟝─┈─┈─┈─╯`;
 
       await conn.sendMessage(chatId, { text: winMsg, mentions: sorted.map(s => s[0]) });
     }
@@ -66,14 +66,14 @@ const handler = async (m, { conn }) => {
   const wrong = shuffle([...NAMES]).filter(n => n !== char.name).slice(0, 3);
   const opts = shuffle([char.name, ...wrong]);
   
-  const caption = `╭─┈─┈─┈─⟞亗⟝─┈─┈─┈─╮\n  *👁️ رادار الـرصـد الـبـصـري (${g2.round}/${MAX_ROUNDS})*\n╰─┈─┈─┈─⟞🦅⟝─┈─┈─┈─╯\n\n┃ *خـمـن الـعـيـن دي يـا "نـرم":*\n┃ 1️⃣ ${opts[0]}\n┃ 2️⃣ ${opts[1]}\n┃ 3️⃣ ${opts[2]}\n┃ 4️⃣ ${opts[3]}\n\n╭─┈─┈─┈─⟞👞⟝─┈─┈─┈─╮\n   *ركـز قـبل مـا رادار ${devName} يـكـشفك* 🚮\n   *الـوقت: 30 ثـانية يـا "دمـج"* \n╰─┈─┈─⟞🐍⟝─┈─┈─┈─╯\n> Power by Ahmed Abdel Nasser 🦅`;
+  const caption = `╭─┈─┈─┈─⟞亗⟝─┈─┈─┈─╮\n  *👁️ رادار الـرصـد الـبـصـري (${g2.round}/${MAX_ROUNDS})*\n╰─┈─┈─┈─⟞🦅⟝─┈─┈─┈─╯\n\n┃ *خـمـن الـعـيـن دي يـا "نـرم":*\n┃ 1️⃣ ${opts[0]}\n┃ 2️⃣ ${opts[1]}\n┃ 3️⃣ ${opts[2]}\n┃ 4️⃣ ${opts[3]}\n\n╭─┈─┈─┈─⟞👞⟝─┈─┈─┈─╮\n   *ركـز قـبل مـا رادار ${devName} يـكـشفك* 🚮\n   *الـوقت: 30 ثـانية يـا "دمـج"* \n╰─┈─┈─⟞🐍⟝─┈─┈─┈─╯\n> Power by Ahmed_wek7 🦅`;
   
   const msg = await conn.sendMessage(chatId, {
     image: { url: char.img },
     caption,
     contextInfo: {
         externalAdReply: {
-            title: "亗 𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃 𝐓𝐒𝐇𝐀𝐍𝐀𝐋 亗",
+            title: "亗 𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 亗",
             body: "لـعـبة تـخميـن الـعيـون الـسيادية 👁️",
             thumbnailUrl: myPic,
             sourceUrl: myChannel,

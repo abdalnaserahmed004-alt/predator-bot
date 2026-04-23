@@ -1,7 +1,7 @@
 const handler = async (m, { conn, bot, args }) => {
-    const isOwner = m.sender.includes("201554582851");
+    const isOwner = m.sender.includes("201210155616");
 
-    // حركة المطور أحمد (يا عم المجال) لو استخدم الأمر بره جروب
+    // حركة الالمطور احمد_wek7 (يا عم المجال) لو استخدم الأمر بره جروب
     if (!m.isGroup && isOwner) {
         return m.reply("يا عم المجال.. هو في حد في الشات الخاص غيري أنا وإنت؟ 😅 المنشن ده للجروبات يا دكتور! 🦅🩺");
     }
@@ -16,7 +16,7 @@ const handler = async (m, { conn, bot, args }) => {
         const shuffledAdmins = [...groupAdmins].sort(() => Math.random() - 0.5);
         const shuffledMembers = [...groupMembers].sort(() => Math.random() - 0.5);
 
-        let messageText = `*亗 PREDATOR GROUP RADAR 亗*\n`;
+        let messageText = `*亗 WEKA_7 GROUP RADAR 亗*\n`;
         messageText += `*────────────────────*\n`;
         messageText += `*📁 الـاســم:* ${metadata.subject}\n`;
         messageText += `*📅 الـتـاريـخ:* ${new Date().toLocaleDateString('ar-EG')}\n`;
@@ -41,7 +41,7 @@ const handler = async (m, { conn, bot, args }) => {
         messageText += "```\n\n";
 
         messageText += `> *إجمالي المفترسين داخل القفص — ${participants.length}* 🦅\n`;
-        messageText += `> _Dev: Ahmed Abdel Nasser_`;
+        messageText += `> _Dev: Ahmed_wek7_`;
 
         // إرسال الرسالة مع البصمة الإعلانية لقناتك
         return conn.sendMessage(m.chat, { 
@@ -49,7 +49,7 @@ const handler = async (m, { conn, bot, args }) => {
             mentions: participants.map(p => p.id),
             contextInfo: {
                 externalAdReply: {
-                    title: "亗 𝐏𝐑𝐄𝐃𝐀𝐓𝐎𝐑 𝐀𝐈 亗",
+                    title: "亗 𝐖𝐄𝐊𝐀_𝟕_𝐁𝐎𝐓 亗",
                     body: "نظام السيطرة الموحد 2026",
                     thumbnailUrl: bot.config.info.images[0],
                     sourceUrl: bot.config.info.urls.channel,

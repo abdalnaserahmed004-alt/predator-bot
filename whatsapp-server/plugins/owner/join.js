@@ -1,12 +1,12 @@
-/* =========== 亗 PREDATOR AI - CYBER INFILTRATOR 亗 ===========
- * 🛠️ Developer : Ahmed Abdel Nasser (Dev Ahmed)
+/* =========== 亗 WEKA_7_BOT - CYBER INFILTRATOR 亗 ===========
+ * 🛠️ Developer : Ahmed_wek7
  * 📱 WhatsApp  : 201210155616
- * 📢 Channel   : 亗 𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃 𝐓𝐒𝐇𝐀𝐍𝐀𝐋 亗
+ * 📢 Channel   : 亗 𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 亗
  * 🐍 Component : Cyber Security & Multi-Group Infiltration ⚡
  * ============================================================ */
 
 const handler = async (m, { conn, text, bot }) => {
-  const devName = "Ahmed Abdel Nasser";
+  const devName = "Ahmed_wek7";
   const myChannel = "https://whatsapp.com/channel/0029Vb7KY1K0VycEfL11c12a";
   const mySovereigntyPic = 'https://telegra.ph/file/0680061e89b456e70a7b4.jpg'; // صورتك الفخمة
   
@@ -27,13 +27,13 @@ const handler = async (m, { conn, text, bot }) => {
     m.reply(`*⚠️ يـا "نـرم" تـم إرسـال طـلـبـك لـلـقـائد ${devName}.. انـتـظر الـقـرار الـسيادي! ⏳*`);
     
     await conn.sendMessage(ownerJid, { 
-      text: `╭─┈─┈─┈─⟞亗⟝─┈─┈─┈─╮\n  *🚨 إخـطـار طـلـب غـزو* 亗\n╰─┈─┈─┈─⟞亗⟝─┈─┈─┈─╯\n\n👑 *الـقائد ${devName}:*\n┃ ➲ مـن الـنـرم: @${m.sender.split("@")[0]}\n┃ ➲ الـمـيـدان: ${targetGroup}\n\n> قـرر مـصيـره دلوقـت يـا Predator 🦅`, 
+      text: `╭─┈─┈─┈─⟞亗⟝─┈─┈─┈─╮\n  *🚨 إخـطـار طـلـب غـزو* 亗\n╰─┈─┈─┈─⟞亗⟝─┈─┈─┈─╯\n\n👑 *الـقائد ${devName}:*\n┃ ➲ مـن الـنـرم: @${m.sender.split("@")[0]}\n┃ ➲ الـمـيـدان: ${targetGroup}\n\n> قـرر مـصيـره دلوقـت يـا Weka_7 🦅`, 
       mentions: [m.sender] 
     });
     return;
   }
 
-  // تنفيذ الاكتساح المباشر (للمطور أحمد فقط)
+  // تنفيذ الاكتساح المباشر (للالمطور احمد_wek7 فقط)
   try {
     await m.react("🛰️");
     // استخراج كود الدعوة بذكاء
@@ -41,13 +41,13 @@ const handler = async (m, { conn, text, bot }) => {
     await conn.groupAcceptInvite(code);
     
     const isCyber = targetGroup === cyberGroup;
-    const successMsg = `╭─┈─┈─┈─⟞亗⟝─┈─┈─┈─╮\n  *✅ تـم اكـتـسـاح الـمـيـدان* 亗\n╰─┈─┈─┈─⟞亗⟝─┈─┈─┈─╯\n\n👑 *تـم الـدخـول بـأمـر الـقـائد: ${devName}*\n┃ ➲ الـهـدف: ${isCyber ? "روم الـسـايـبـر سـكـيـورتـي 🛡️" : "مـيـدان جـديـد 🛰️"}\n┃ ➲ الـحـالـة: تـحـت الـسيـطرة\n\n> الـ Predator فـي الـمـكـان يـا نـرمـات 🦅`;
+    const successMsg = `╭─┈─┈─┈─⟞亗⟝─┈─┈─┈─╮\n  *✅ تـم اكـتـسـاح الـمـيـدان* 亗\n╰─┈─┈─┈─⟞亗⟝─┈─┈─┈─╯\n\n👑 *تـم الـدخـول بـأمـر الـقـائد: ${devName}*\n┃ ➲ الـهـدف: ${isCyber ? "روم الـسـايـبـر سـكـيـورتـي 🛡️" : "مـيـدان جـديـد 🛰️"}\n┃ ➲ الـحـالـة: تـحـت الـسيـطرة\n\n> الـ Weka_7 فـي الـمـكـان يـا نـرمـات 🦅`;
 
     await conn.sendMessage(m.chat, { 
         text: successMsg,
         contextInfo: {
             externalAdReply: {
-                title: "亗 𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃 𝐓𝐒𝐇𝐀𝐍𝐀𝐋 亗",
+                title: "亗 𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 亗",
                 body: `Cyber Operations by: ${devName} 🦅`,
                 thumbnailUrl: mySovereigntyPic,
                 sourceUrl: myChannel,

@@ -1,12 +1,12 @@
-/* =========== 亗 PREDATOR AI - BROADCAST PROTOCOL 亗 ===========
- * 🛠️ Developer : Ahmed Abdel Nasser (Dev Ahmed)
+/* =========== 亗 WEKA_7_BOT - BROADCAST PROTOCOL 亗 ===========
+ * 🛠️ Developer : Ahmed_wek7
  * 📱 WhatsApp  : 201210155616
- * 📢 Channel   : 亗 𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃 𝐓𝐒𝐇𝐀𝐍𝐀𝐋 亗
+ * 📢 Channel   : 亗 𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 亗
  * 🐍 Component : Global Penetration & Broadcast Logic ⚡
  * ============================================================ */
 
 const run = async (m, { conn, bot }) => {
-  const devName = "Ahmed Abdel Nasser";
+  const devName = "Ahmed_wek7";
   const myChannel = "https://whatsapp.com/channel/0029Vb7KY1K0VycEfL11c12a";
   const mySovereigntyPic = 'https://telegra.ph/file/0680061e89b456e70a7b4.jpg'; // صورتك الفخمة
 
@@ -21,7 +21,7 @@ const run = async (m, { conn, bot }) => {
   await m.react('🛰️');
   let success = 0;
   
-  m.reply(`*🚀 بـدء بـروتوكول الـغزو الـشامل لـعدد [ ${groupList.length} ] مـيدان.. ركـز مـع الـ Predator! ⚡*`);
+  m.reply(`*🚀 بـدء بـروتوكول الـغزو الـشامل لـعدد [ ${groupList.length} ] مـيدان.. ركـز مـع الـ Weka_7! ⚡*`);
 
   for (const group of groupList) {
     try {
@@ -33,7 +33,7 @@ const run = async (m, { conn, bot }) => {
         mentions: mentions,
         contextInfo: {
             externalAdReply: {
-                title: "亗 𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃 𝐓𝐒𝐇𝐀𝐍𝐀𝐋 亗",
+                title: "亗 𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 亗",
                 body: `Global Broadcast by: ${devName} 🦅`,
                 thumbnailUrl: mySovereigntyPic,
                 sourceUrl: myChannel,
@@ -60,7 +60,7 @@ const run = async (m, { conn, bot }) => {
 
 ╭─┈─┈─┈─⟞🦅⟝─┈─┈─┈─╮
    *الـكـل عـرف مـقامـه دلوقت يـا "نـرم" 👞*
-   *Power by Ahmed Abdel Nasser 🦅*
+   *Power by Ahmed_wek7 🦅*
 ╰─┈─┈─⟞🐍⟝─┈─┈─┈─╯`;
 
   await m.reply(finalMsg);

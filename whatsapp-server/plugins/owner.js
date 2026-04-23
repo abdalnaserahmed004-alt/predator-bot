@@ -1,6 +1,6 @@
 let handler = async (m, { conn, bot }) => {
   // اسمك اللي هيرجّع الهيبة ⚔️
-  let watermark = '亗 𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃 亗'; 
+  let watermark = '亗 𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 亗'; 
   
   let quoted = {
     key: { fromMe: false, participant: '0@s.whatsapp.net', remoteJid: 'status@broadcast' },
@@ -23,7 +23,7 @@ END:VCARD`;
       forwardingScore: 999,
       isForwarded: true,
       externalAdReply: {
-        title: '🦅 𝐓𝐇𝐄 𝐌𝐀𝐒𝐓𝐄𝐑𝐌𝐈𝐍𝐃: 𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃 🦅',
+        title: '🦅 𝐓𝐇𝐄 𝐌𝐀𝐒𝐓𝐄𝐑𝐌𝐈𝐍𝐃: 𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 🦅',
         body: '☢️ 𝐏𝐑𝐄𝐃𝐀𝐓𝐎𝐑 𝐀𝐈 : 𝐃𝐄𝐒𝐓𝐑𝐔𝐂𝐓𝐈𝐎𝐍 𝐌𝐎𝐃𝐄 ☢️',
         sourceUrl: 'https://whatsapp.com/channel/0029Vb7KY1K0VycEfL11c12a', 
         thumbnailUrl: img,
@@ -34,7 +34,7 @@ END:VCARD`;
     }
   }, { quoted });
 
-  await conn.sendMessage(m.chat, { text: '⚡ *نظام الـ Predator تحت سيطرة المطور أحمد عبد الناصر.. ملوك المجال مش بتوع عيال!* 🏴‍☠️🔥' }, { quoted: m });
+  await conn.sendMessage(m.chat, { text: '⚡ *نظام الـ Weka_7 تحت سيطرة الالمطور احمد_wek7 عبد الناصر.. ملوك المجال مش بتوع عيال!* 🏴‍☠️🔥' }, { quoted: m });
 };
 
 handler.command = /^(owner|المطور|مطور)$/i;

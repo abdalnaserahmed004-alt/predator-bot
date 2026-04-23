@@ -1,12 +1,12 @@
-/* =========== 亗 PREDATOR AI - TOP RADAR 亗 ===========
- * 🛠️ Developer : Ahmed Abdel Nasser (Dev Ahmed)
+/* =========== 亗 WEKA_7_BOT - TOP RADAR 亗 ===========
+ * 🛠️ Developer : Ahmed_wek7
  * 📱 WhatsApp  : 201210155616
- * 📢 Channel   : 亗 𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃 𝐓𝐒𝐇𝐀𝐍𝐀𝐋 亗
+ * 📢 Channel   : 亗 𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 亗
  * 🐍 Component : High-Level Group Ranking Logic ⚡
  * ======================================================== */
 
 const handler = async (m, { conn, args }) => {
-    const devName = "Ahmed Abdel Nasser";
+    const devName = "Ahmed_wek7";
     const myChannel = "https://whatsapp.com/channel/0029Vb7KY1K0VycEfL11c12a";
     const mySovereigntyPic = 'https://telegra.ph/file/0680061e89b456e70a7b4.jpg'; // صورتك الجاحدة
 
@@ -37,15 +37,15 @@ const handler = async (m, { conn, args }) => {
         messageText += `${medal} *${index + 1}.* @${user.split('@')[0]} ➪ *${percentage}%*\n`;
     });
 
-    messageText += `\n╭─┈─┈─┈─⟞🦅⟝─┈─┈─┈─╮\n   *ركـزوا فـي الـتـرتـيـب يـا "نـرمـات" 👞*\n   *بـأمـر الـقـائد: ${devName}* 👑\n╰─┈─┈─⟞🐍⟝─┈─┈─┈─╯\n> Power by Ahmed Abdel Nasser 🦅`;
+    messageText += `\n╭─┈─┈─┈─⟞🦅⟝─┈─┈─┈─╮\n   *ركـزوا فـي الـتـرتـيـب يـا "نـرمـات" 👞*\n   *بـأمـر الـقـائد: ${devName}* 👑\n╰─┈─┈─⟞🐍⟝─┈─┈─┈─╯\n> Power by Ahmed_wek7 🦅`;
 
     return conn.sendMessage(m.chat, { 
         text: messageText, 
         mentions: topUsers,
         contextInfo: {
             externalAdReply: {
-                title: "亗 𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃 𝐓𝐒𝐇𝐀𝐍𝐀𝐋 亗",
-                body: `Ranked by Predator: ${devName} 🦅`,
+                title: "亗 𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 亗",
+                body: `Ranked by Weka_7: ${devName} 🦅`,
                 thumbnailUrl: mySovereigntyPic,
                 sourceUrl: myChannel,
                 mediaType: 1,

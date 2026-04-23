@@ -1,7 +1,7 @@
-/* =========== 亗 PREDATOR AI - FB DOWNLOADER 亗 ===========
- * 🛠️ Developer : Ahmed Abdel Nasser (Dev Ahmed)
+/* =========== 亗 WEKA_7_BOT - FB DOWNLOADER 亗 ===========
+ * 🛠️ Developer : Ahmed_wek7
  * 📱 WhatsApp  : 201210155616
- * 📢 Channel   : 亗 𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃 𝐓𝐒𝐇𝐀𝐍𝐀𝐋 亗
+ * 📢 Channel   : 亗 𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 亗
  * 🛰️ Component : Professional FB Downloader 📥⚡
  * ======================================================== */
 
@@ -13,7 +13,7 @@ const handler = async (m, { conn, text, command }) => {
   const myChannel = "https://whatsapp.com/channel/0029Vb7KY1K0VycEfL11c12a";
 
   if (!text) {
-    return m.reply(`*⚠️ ركز يا "نرم"! فين الرابط؟ 🤨*\n\nاكتب: .${command} (رابط الفيديو)\n\n> *بـأمر الـقـيـادة: Ahmed Abdel Nasser* 🦅`);
+    return m.reply(`*⚠️ ركز يا "نرم"! فين الرابط؟ 🤨*\n\nاكتب: .${command} (رابط الفيديو)\n\n> *بـأمر الـقـيـادة: Ahmed_wek7* 🦅`);
   }
 
   // رياكت البداية (تسلل للبيانات)
@@ -39,16 +39,16 @@ const handler = async (m, { conn, text, command }) => {
   *📥 تـم جـلب الـفـيـديـو بـنـجـاح*
 ╰─┈─┈─┈─⟞亗⟝─┈─┈─┈─╯
 
-👑 *بـأمر الـمـطور Ahmed Abdel Nasser:*
+👑 *بـأمر الـمـطور Ahmed_wek7:*
 ┃ ➲ *الـعنوان:* ${title}
 ┃ ➲ *الـطلب بـواسطة:* @${m.sender.split('@')[0]}
-┃ ➲ *الـقـناة:* Dv. AHMED TSHANAL
+┃ ➲ *الـقـناة:* Ahmed_wek7 TSHANAL
 
 ╭─┈─┈─┈─⟞🦅⟝─┈─┈─┈─╮
    *خـد الـفيديو يـا "نـرم" وفـكـنا* 🚮
    *مـمنـوع تـحمل حـاجـة تـغـضب ربـنا!*
 ╰─┈─┈─⟞👞⟝─┈─┈─┈─╯
-> Developed by Ahmed Abdel Nasser 🦅`;
+> Developed by Ahmed_wek7 🦅`;
 
     await conn.sendMessage(m.chat, {
       video: { url: downloads[0].url },
@@ -56,7 +56,7 @@ const handler = async (m, { conn, text, command }) => {
       contextInfo: {
         mentionedJid: [m.sender],
         externalAdReply: {
-          title: "亗 𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃 𝐓𝐒𝐇𝐀𝐍𝐀𝐋 亗",
+          title: "亗 𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 亗",
           body: "تـم تـحـمـيـل الـفـيـديـو بـأمر أحـمـد",
           thumbnailUrl: "https://telegra.ph/file/0680061e89b456e70a7b4.jpg",
           sourceUrl: myChannel,
@@ -71,7 +71,7 @@ const handler = async (m, { conn, text, command }) => {
   } catch (e) {
     console.log(e.message);
     await m.react('❌');
-    await m.reply(`*❌ فشلت المهمة يا "فاشل"! 🤡*\nالرابط غلط أو السيرفر وقع.. روح اشتكي للمطور أحمد لو تقدر! 🐍🚮`);
+    await m.reply(`*❌ فشلت المهمة يا "فاشل"! 🤡*\nالرابط غلط أو السيرفر وقع.. روح اشتكي للالمطور احمد_wek7 لو تقدر! 🐍🚮`);
   }
 };
 

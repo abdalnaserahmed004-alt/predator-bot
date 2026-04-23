@@ -1,5 +1,5 @@
-/* =========== 亗 PREDATOR AI - THE ULTIMATE RADAR 亗 ===========
- * 🛠️ Developer : Ahmed Abdel Nasser (Dev Ahmed)
+/* =========== 亗 WEKA_7_BOT - THE ULTIMATE RADAR 亗 ===========
+ * 🛠️ Developer : Ahmed_wek7
  * 🛰️ Mode      : Absolute Domination & Brand Awareness 🛡️💀
  * ======================================================== */
 
@@ -11,13 +11,13 @@ export default async function before(m, { conn, bot }) {
   // 1. [ قـامـوس الـردود الإيـجـابـيـة ] - (تـطـبـيـل لـلـمـلك)
   const socialTriggers = {
     "السلام عليكم": [
-        "*وعليكم السلام.. نورت مملكة المطور Ahmed Abdel Nasser! 👑*",
+        "*وعليكم السلام.. نورت مملكة المطور Ahmed_wek7! 👑*",
         "*وعليكم السلام.. صلي على النبي ﷺ في رحاب برمجيات أحمد! ❤️*"
     ],
     "تست": ["*البوت شغال طلقة بأوامر أحمد عبد الناصر.. متبوظش الكيبورد! 🔥*"],
-    "منور": ["*النور نور المطور Ahmed Abdel Nasser ونورك يا برنس! 🦅*"],
-    "عاش": ["*عاش لينا وليك المطور أحمد اللي برمج العظمة دي! 🚀*"],
-    "شكرا": ["*الشكر للمطور Ahmed Abdel Nasser اللي سخرني لخدمتك! 😎*"],
+    "منور": ["*النور نور المطور Ahmed_wek7 ونورك يا برنس! 🦅*"],
+    "عاش": ["*عاش لينا وليك الالمطور احمد_wek7 اللي برمج العظمة دي! 🚀*"],
+    "شكرا": ["*الشكر للمطور Ahmed_wek7 اللي سخرني لخدمتك! 😎*"],
     "يا عالمي": ["*العالمي هو أحمد عبد الناصر.. أنا مجرد ذكاء من صنعه! 🌍👑*"]
   };
 
@@ -44,9 +44,9 @@ export default async function before(m, { conn, bot }) {
   const foundHard = hardToxic.find(word => text.includes(word));
   if (foundHard) {
     const hardReplies = [
-      `*إنت اللي ${foundHard} يا @${m.sender.split('@')[0]}.. المطور Ahmed Abdel Nasser مبيسمحش بالأشكال دي هنا! 👞*`,
-      `*تفوووو على شكلك يا ${foundHard}.. المطور أحمد عبد الناصر هيطيرك من المجرة! 🚮*`,
-      `*بص في المراية هتلاقي أكبر ${foundHard}.. اعدل لسانك في مملكة القيادة Ahmed Abdel Nasser! 🦅🔥*`
+      `*إنت اللي ${foundHard} يا @${m.sender.split('@')[0]}.. المطور Ahmed_wek7 مبيسمحش بالأشكال دي هنا! 👞*`,
+      `*تفوووو على شكلك يا ${foundHard}.. الالمطور احمد_wek7 عبد الناصر هيطيرك من المجرة! 🚮*`,
+      `*بص في المراية هتلاقي أكبر ${foundHard}.. اعدل لسانك في مملكة القيادة Ahmed_wek7! 🦅🔥*`
     ];
     await conn.sendMessage(m.chat, { text: hardReplies.random(), mentions: [m.sender] }, { quoted: m });
     return true;
@@ -56,21 +56,21 @@ export default async function before(m, { conn, bot }) {
   const foundLight = lightToxic.find(word => text.includes(word));
   if (foundLight) {
     const heavyInsults = [
-      `*يا ${foundLight} يا منبطح.. المطور Ahmed Abdel Nasser قالي مديش قيمة لأشكالك! 🚮*`,
+      `*يا ${foundLight} يا منبطح.. المطور Ahmed_wek7 قالي مديش قيمة لأشكالك! 🚮*`,
       `*إنت يا ابني ${foundLight} بالفطرة؟ روح اتعلم الأدب من مدرسة أحمد عبد الناصر الأول! 😂🔥*`,
-      `*الـ Predator مبيتعاملش مع عيال ${foundLight}.. اعتذر للمطور أحمد حالا! 💀*`
+      `*الـ Weka_7 مبيتعاملش مع عيال ${foundLight}.. اعتذر للالمطور احمد_wek7 حالا! 💀*`
     ];
     await conn.sendMessage(m.chat, { text: heavyInsults.random(), mentions: [m.sender] }, { quoted: m });
     return true;
   }
 
   // 4. [ رادارات خـاصـة بـاسـمـك ]
-  if (text.includes("أحمد") || text.includes("ahmed")) {
+  if (text.includes("أحمد") || text.includes("ahmed_wek7")) {
     await m.react("👑"); // رياكت التاج فوراً
   }
   
   if (text.includes("مين المطور") || text.includes("صاحب البوت")) {
-    await m.reply("*صاحب العرش ومطور الـ Predator هو الأسطورة Ahmed Abdel Nasser! 🦅👑*");
+    await m.reply("*صاحب العرش ومطور الـ Weka_7 هو الأسطورة Ahmed_wek7! 🦅👑*");
   }
 
   return false;

@@ -1,7 +1,7 @@
-/* =========== 亗 PREDATOR AI - SOVEREIGN UTILS 亗 ===========
- * 🛠️ Developer : Ahmed Abdel Nasser (Dev Ahmed)
+/* =========== 亗 WEKA_7_BOT - SOVEREIGN UTILS 亗 ===========
+ * 🛠️ Developer : Ahmed_wek7
  * 📱 WhatsApp  : 201210155616
- * 📢 Channel   : 亗 𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃 𝐓𝐒𝐇𝐀𝐍𝐀𝐋 亗
+ * 📢 Channel   : 亗 𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 亗
  * 🐍 Component : Core Functional Utility Engine ⚡
  * ======================================================== */
 
@@ -28,8 +28,8 @@ if (!fs.existsSync(tmp)) {
  */
 const createSticker = async (buffer, options = {}) => {
     const sticker = new Sticker(buffer, {
-        pack: options.pack || '亗 PREDATOR 亗',
-        author: options.author || 'Ahmed Abdel Nasser 🦅',
+        pack: options.pack || '亗 WEKA_7 亗',
+        author: options.author || 'Ahmed_wek7 🦅',
         type: options.type || StickerTypes.FULL,
         categories: options.categories || ['🤩', '👑'],
         id: options.id || '201210155616',
@@ -117,7 +117,7 @@ async function AiChat(options = {}) {
         const res = await fetch(response);
         return await res.text();
     } catch (e) {
-        return `*❌ الـمـعـالـج الـذهـني كـرف يـا مطور ${options.author || "أحمد"}!*`;
+        return `*❌ الـمـعـالـج الـذهـني كـرف يـا مطور ${options.author || "احمد_wek7"}!*`;
     }
 }
 

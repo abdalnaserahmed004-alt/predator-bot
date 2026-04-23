@@ -1,7 +1,7 @@
-/* =========== 亗 PREDATOR AI - DATA EXTRACTION 亗 ===========
- * 🛠️ Developer : Ahmed Abdel Nasser (Dev Ahmed)
+/* =========== 亗 WEKA_7_BOT - DATA EXTRACTION 亗 ===========
+ * 🛠️ Developer : Ahmed_wek7
  * 📱 WhatsApp  : 201210155616
- * 📢 Channel   : 亗 𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃 𝐓𝐒𝐇𝐀𝐍𝐀𝐋 亗
+ * 📢 Channel   : 亗 𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 亗
  * 🐍 Component : High-Precision OCR Intelligence ⚡
  * ======================================================== */
 
@@ -9,12 +9,12 @@ import axios from 'axios';
 import FormData from 'form-data';
 
 let handler = async (m, { conn }) => {
-  const devName = "Ahmed Abdel Nasser";
+  const devName = "Ahmed_wek7";
   const myChannel = "https://whatsapp.com/channel/0029Vb7KY1K0VycEfL11c12a";
   const mySovereigntyPic = 'https://telegra.ph/file/0680061e89b456e70a7b4.jpg'; // صورتك الفخمة
 
   try {
-    if (!m.quoted) return m.reply(`*⚠️ يـا "نـرم" رد عـلى الـصـورة اللي عـايز الـ Predator يـسحب مـنها الـبيانات! 🤡*`);
+    if (!m.quoted) return m.reply(`*⚠️ يـا "نـرم" رد عـلى الـصـورة اللي عـايز الـ Weka_7 يـسحب مـنها الـبيانات! 🤡*`);
     
     const q = m.quoted ? m.quoted : m;
     const mime = (q.msg || q).mimetype || '';
@@ -44,14 +44,14 @@ let handler = async (m, { conn }) => {
 ${res.data.result}
 ╰─┈─┈─⟞🐍⟝─┈─┈─┈─╯
 
-> الـ Predator قـرأ الـواقـع بـالـجـزمـة 👞
-> Power by Ahmed Abdel Nasser 🦅`;
+> الـ Weka_7 قـرأ الـواقـع بـالـجـزمـة 👞
+> Power by Ahmed_wek7 🦅`;
 
     await conn.sendMessage(m.chat, { 
         text: successMsg,
         contextInfo: {
             externalAdReply: {
-                title: "亗 𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃 𝐓𝐒𝐇𝐀𝐍𝐀𝐋 亗",
+                title: "亗 𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 亗",
                 body: `OCR Intelligence: ${devName} 🦅`,
                 thumbnailUrl: mySovereigntyPic,
                 sourceUrl: myChannel,

@@ -1,18 +1,18 @@
-/* =========== 亗 PREDATOR AI - STICKER FACTORY 亗 ===========
- * 🛠️ Developer : Ahmed Abdel Nasser (Dev Ahmed)
+/* =========== 亗 WEKA_7_BOT - STICKER FACTORY 亗 ===========
+ * 🛠️ Developer : Ahmed_wek7
  * 📱 WhatsApp  : 201210155616
- * 📢 Channel   : 亗 𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃 𝐓𝐒𝐇𝐀𝐍𝐀𝐋 亗
+ * 📢 Channel   : 亗 𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 亗
  * 🐍 Component : High-Performance Media Conversion ⚡
  * ======================================================== */
 
 import { createSticker } from "../../system/utils.js";
 
 const test = async (m, { conn, bot }) => {
-  const devName = "Ahmed Abdel Nasser";
+  const devName = "Ahmed_wek7";
   const myChannel = "https://whatsapp.com/channel/0029Vb7KY1K0VycEfL11c12a";
   const mySovereigntyPic = 'https://telegra.ph/file/0680061e89b456e70a7b4.jpg'; // صورتك الفخمة
 
-  if (!m.quoted) return m.reply(`*⚠️ يـا "نـرم" رد عـلى صورة أو فـيديو عـشان الـ Predator يـحولـهـا لـمـلـصـق! 🤡*`);
+  if (!m.quoted) return m.reply(`*⚠️ يـا "نـرم" رد عـلى صورة أو فـيديو عـشان الـ Weka_7 يـحولـهـا لـمـلـصـق! 🤡*`);
   
   await m.react("🎨");
 
@@ -25,7 +25,7 @@ const test = async (m, { conn, bot }) => {
     }
 
     // جلب الحقوق الافتراضية من ملف الإعدادات
-    const { pack, author } = bot.config?.info?.copyright || { pack: "亗 PREDATOR 亗", author: devName };
+    const { pack, author } = bot.config?.info?.copyright || { pack: "亗 WEKA_7 亗", author: devName };
 
     const buffer = await createSticker(await q.download(), { 
         mime: q.mimetype, 
@@ -43,7 +43,7 @@ const test = async (m, { conn, bot }) => {
                 forwardingScore: 999,
                 forwardedNewsletterMessageInfo: {
                     newsletterJid: '120363225356834044@newsletter',
-                    newsletterName: '亗 𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃 𝐓𝐒𝐇𝐀𝐍𝐀𝐋 亗',
+                    newsletterName: '亗 𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 亗',
                     serverMessageId: 100
                 },
                 externalAdReply: {

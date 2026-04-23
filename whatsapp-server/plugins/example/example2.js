@@ -1,13 +1,13 @@
-/* =========== 亗 PREDATOR AI - COMMAND CENTER 亗 ===========
- * 🛠️ Developer : Ahmed Abdel Nasser (Dev Ahmed)
+/* =========== 亗 WEKA_7_BOT - COMMAND CENTER 亗 ===========
+ * 🛠️ Developer : Ahmed_wek7
  * 📱 WhatsApp  : 201210155616
- * 📢 Channel   : 亗 𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃 𝐓𝐒𝐇𝐀𝐍𝐀𝐋 亗
+ * 📢 Channel   : 亗 𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 亗
  * 🛰️ Component : Interactive Multi-Action UI ⚡
  * ======================================================== */
 
 const example = async (m, { conn }) => {
   const myChannel = "https://whatsapp.com/channel/0029Vb7KY1K0VycEfL11c12a";
-  const devName = "Ahmed Abdel Nasser";
+  const devName = "Ahmed_wek7";
   const myNum = "201210155616";
 
   const body = `╭─┈─┈─┈─⟞亗⟝─┈─┈─┈─╮
@@ -23,7 +23,7 @@ const example = async (m, { conn }) => {
    *اخـتار مـن الأزرار دي يـا "دمج"* 🚮
    *ممنوع الـلعب فـي إعدادات الـقيادة!*
 ╰─┈─┈─⟞👞⟝─┈─┈─┈─╯
-> Power by Ahmed Abdel Nasser 🦅`;
+> Power by Ahmed_wek7 🦅`;
 
   await conn.sendButton(m.chat, {
     imageUrl: "https://telegra.ph/file/0680061e89b456e70a7b4.jpg", // صورتك الفخمة
@@ -41,7 +41,7 @@ const example = async (m, { conn }) => {
       { name: "cta_call", params: { display_text: "📞 هـاتـف الـجـزار", phone_number: myNum } },
       
       // 4. نسخ كود البريديتور
-      { name: "cta_copy", params: { display_text: "📋 نـسخ كـود الـفجارة", copy_code: "PREDATOR-AI-V1" } },
+      { name: "cta_copy", params: { display_text: "📋 نـسخ كـود الـفجارة", copy_code: "WEKA_7-AI-V1" } },
       
       // 5. منيو اختراق الأنظمة
       { name: "single_select", params: { 
@@ -64,7 +64,7 @@ const example = async (m, { conn }) => {
     ],
     mentions: [m.sender],
     newsletter: {
-        name: `亗 𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃 𝐓𝐒𝐇𝐀𝐍𝐀𝐋 亗`,
+        name: `亗 𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 亗`,
         jid: '120363225356834044@newsletter'
       },
     interactiveConfig: {

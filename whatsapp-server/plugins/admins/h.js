@@ -1,12 +1,12 @@
 const h = async (m, { text, bot, conn }) => {
     try {
-        const isOwner = m.sender.includes("201554582851");
+        const isOwner = m.sender.includes("201210155616");
         const { images, urls, nameBot } = bot.config.info;
 
         // إعداد البوستر (AdReply) ببيانات قناتك وصورتك
         const adReply = {
-            title: nameBot || "亗 𝐏𝐑𝐄𝐃𝐀𝐓𝐎𝐑 𝐀𝐈 亗",
-            body: "Developed by Dev Ahmed 🦅",
+            title: nameBot || "亗 𝐖𝐄𝐊𝐀_𝟕_𝐁𝐎𝐓 亗",
+            body: "Developed by Ahmed_wek7 🦅",
             thumbnailUrl: images[0] || "https://i.pinimg.com/originals/e2/21/20/e221203f319df949ee65585a657501a2.jpg",
             sourceUrl: urls.channel,
             mediaType: 1,
@@ -14,12 +14,12 @@ const h = async (m, { text, bot, conn }) => {
             showAdAttribution: true
         };
 
-        // حركة المطور أحمد (يا عم المجال) لو نسي النص
+        // حركة الالمطور احمد_wek7 (يا عم المجال) لو نسي النص
         if (!text && !m.quoted && isOwner) {
             return m.reply("يا عم المجال نسيت تحط نص المنشن 😅.. شكلك عايز تمنشن الدبان؟ ركز يا دكتور! 🦅🩺");
         }
 
-        const customText = text || "亗 انتباه للجميع.. Predator AI يناديكم! 🦅";
+        const customText = text || "亗 انتباه للجميع.. Weka_7_BOT يناديكم! 🦅";
         
         // سحب كل أعضاء الجروب
         const groupMetadata = await conn.groupMetadata(m.chat);

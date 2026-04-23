@@ -1,11 +1,11 @@
-/* =========== 亗 PREDATOR AI - BREAK GAME 亗 ===========
- * 🛠️ Developer : Ahmed Abdel Nasser (Dev Ahmed)
+/* =========== 亗 WEKA_7_BOT - BREAK GAME 亗 ===========
+ * 🛠️ Developer : Ahmed_wek7
  * 📱 WhatsApp  : 201210155616
- * 📢 Channel   : 亗 𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃 𝐓𝐒𝐇𝐀𝐍𝐀𝐋 亗
+ * 📢 Channel   : 亗 𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 亗
  * 🎮 Component : Hardcore Break Logic (Savage Mode) ⚡
  * ======================================================== */
 
-const devName = "Ahmed Abdel Nasser";
+const devName = "Ahmed_wek7";
 
 handler.before = async (m, { conn }) => {
     if (!m.text || !global.break?.games[m.chat] || !global.break?.scores[m.chat]) return;
@@ -53,7 +53,7 @@ ${sorted.join('\n')}
 🦅 *الـمـنـبـطـح الأقـوى:* @${winner.split('@')[0]}
 🎁 *الـجـائزة:* +500 XP | 🍪 +10 كـوكـيـز
 
-> تـم نـزع الـنقاط بـنجاح بـواسطة الـ Predator 👑`;
+> تـم نـزع الـنقاط بـنجاح بـواسطة الـ Weka_7 👑`;
 
         await conn.sendMessage(m.chat, { text: winMsg, mentions });
         delete global.break.scores[m.chat];
@@ -87,13 +87,13 @@ async function handler(m, { conn }) {
    *اكتب بسرعة قبل ما رادار ${devName} يطردك* 🚮
    *الـوقت: 30 ثانية.. ابـهرنـا بـذكـائك الـمحدود!*
 ╰─┈─┈─⟞🐍⟝─┈─┈─┈─╯
-> Power by Ahmed Abdel Nasser 🦅`;
+> Power by Ahmed_wek7 🦅`;
 
     await conn.sendMessage(m.chat, { 
         text: gameMsg,
         contextInfo: {
             externalAdReply: {
-                title: "亗 𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃 𝐓𝐒𝐇𝐀𝐍𝐀𝐋 亗",
+                title: "亗 𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 亗",
                 body: "لـعبة الـتـفـكـيـك الـسيادية 🔨",
                 thumbnailUrl: "https://telegra.ph/file/0680061e89b456e70a7b4.jpg",
                 sourceUrl: myChannel,

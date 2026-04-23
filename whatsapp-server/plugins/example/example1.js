@@ -1,11 +1,11 @@
-/* =========== 亗 PREDATOR AI - THE SAVAGE ENROLLMENT 亗 ===========
- * 🛠️ Developer : Ahmed Abdel Nasser (Dev Ahmed)
+/* =========== 亗 WEKA_7_BOT - THE SAVAGE ENROLLMENT 亗 ===========
+ * 🛠️ Developer : Ahmed_wek7
  * 📱 WhatsApp  : 201210155616
- * 📢 Channel   : 亗 𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃 𝐓𝐒𝐇𝐀𝐍𝐀𝐋 亗
+ * 📢 Channel   : 亗 𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 亗
  * ======================================================== */
 
 const handler = async (m, { conn, text, command }) => {
-    const dev = "Ahmed Abdel Nasser";
+    const dev = "Ahmed_wek7";
     
     if (command === "تسجيل") {
         if (!text) return m.reply(`*⚠️ إنت عبيط يا "نرم"؟ ركز مع المطور ${dev} واكتب بياناتك! 🤡*\n\n> مثال: .تسجيل منبطح|20`);
@@ -26,7 +26,7 @@ const handler = async (m, { conn, text, command }) => {
    *مبروك.. بقيت مجرد رقم عند ${dev}*
    *متحاولش تتنطط عشان متتنفخش! 💨*
 ╰─┈─┈─⟞👞⟝─┈─┈─┈─╯
-> Developed by Ahmed Abdel Nasser 🦅`;
+> Developed by Ahmed_wek7 🦅`;
 
         await conn.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/0680061e89b456e70a7b4.jpg' }, caption: msg }, { quoted: m });
     }

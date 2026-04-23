@@ -1,5 +1,5 @@
 {
-  "name": "predator-ai",
+  "name": "weka-7-bot",
   "version": "2.0.0",
   "description": "亗 𝐏𝐑𝐄𝐃𝐀𝐓𝐎𝐑 𝐀𝐈 - 𝐓𝐇𝐄 𝐔𝐋𝐓𝐈𝐌𝐀𝐓𝐄 𝐃𝐄𝐒𝐓𝐑𝐔𝐂𝐓𝐈𝐎𝐍 𝐒𝐘𝐒𝐓𝐄𝐌 亗",
   "main": "index.js",
@@ -9,11 +9,11 @@
   },
   "keywords": [
     "whatsapp-bot",
-    "predator-ai",
-    "dev-ahmed",
+    "weka-7-bot",
+    "dev-ahmed_wek7",
     "hacking-system"
   ],
-  "author": "Ahmed Abdel Nasser (Dv. AHMED)",
+  "author": "Ahmed_wek7",
   "license": "MIT",
   "dependencies": {
     "meowsab": "https://github.com/deveni0/ws/tarball/main",

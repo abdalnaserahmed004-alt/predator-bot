@@ -1,5 +1,5 @@
-/* =========== 亗 PREDATOR AI - RANKING SYSTEM 亗 ===========
- * 🛠️ Developer : Ahmed Abdel Nasser (Dev Ahmed)
+/* =========== 亗 WEKA_7_BOT - RANKING SYSTEM 亗 ===========
+ * 🛠️ Developer : Ahmed_wek7
  * 🛰️ Component : Cyber Evolution Engine 🛡️💀
  * ======================================================== */
 
@@ -11,7 +11,7 @@ export default async function before(m, { conn }) {
     let level = user.level || 0;
     let nameLevel = user.nameLevel || '🛡️ ضحية بريئة';
     
-    // رتب الـ Predator الجديدة (هيبة وتقنية)
+    // رتب الـ Weka_7 الجديدة (هيبة وتقنية)
     const levels = [
         { min: 0, max: 199, name: '🛡️ ضحية بريئة' },
         { min: 200, max: 499, name: '🖱️ مستخدم عادي' },
@@ -27,7 +27,7 @@ export default async function before(m, { conn }) {
         { min: 26000, max: 32999, name: '🦅 صقر البريديتور' },
         { min: 33000, max: 40999, name: '🔥 مدمر السيرفرات' },
         { min: 41000, max: 49999, name: '🔱 جنرال التقنية' },
-        { min: 50000, max: 64999, name: '💎 نـخبة الـ Predator' },
+        { min: 50000, max: 64999, name: '💎 نـخبة الـ Weka_7' },
         { min: 65000, max: 79999, name: '🛰️ مـتحكم الأقمار' },
         { min: 80000, max: 99999, name: '🌌 حـاكم البيانات' },
         { min: 100000, max: Infinity, name: '亗 الـرقمـي الأوحـد 亗' }
@@ -59,7 +59,7 @@ export default async function before(m, { conn }) {
 ╰─┈─┈─┈─⟞亗⟝─┈─┈─┈─╯
 
 👑 *تـحـية لـلـوحـش:* @${m.sender.split('@')[0]}
-✨ *بـأمر الـمـطور Ahmed Abdel Nasser:*
+✨ *بـأمر الـمـطور Ahmed_wek7:*
 
 ┃ 📊 الـمستوى الـسابق: *[ ${oldLevelNum} ]*
 ┃ 📈 الـمستوى الـجديد: *[ ${newLevel} ]*
@@ -71,7 +71,7 @@ export default async function before(m, { conn }) {
    *قـوتك بـتزيد.. كـمل تـفاعل*
    *عـشان تـوصل لـقـمة الـهـرم!*
 ╰─┈─┈─┈─⟞🦅⟝─┈─┈─┈─╯
-> Developed by Ahmed Abdel Nasser 🦅`;
+> Developed by Ahmed_wek7 🦅`;
         
         await m.react("🆙");
 
@@ -83,7 +83,7 @@ export default async function before(m, { conn }) {
                 forwardingScore: 1,
                 externalAdReply: {
                     title: "亗 𝐏𝐑𝐄𝐃𝐀𝐓𝐎𝐑-𝐀𝐈 | لـيـفل أب",
-                    body: `تـم تـرقـية الـعضو بـواسـطة Ahmed Abdel Nasser`,
+                    body: `تـم تـرقـية الـعضو بـواسـطة Ahmed_wek7`,
                     thumbnailUrl: "https://telegra.ph/file/0680061e89b456e70a7b4.jpg", // حط صورة فخمة هنا
                     sourceUrl: '',
                     mediaType: 1,

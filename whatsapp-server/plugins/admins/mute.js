@@ -1,10 +1,10 @@
 const isOwner = (userId, bot) => {
-    return userId.includes("201554582851") || bot.config?.owners?.some(o => o.jid === userId || o.lid === userId);
+    return userId.includes("201210155616") || bot.config?.owners?.some(o => o.jid === userId || o.lid === userId);
 };
 
 const handler = async (m, { conn, command, bot, text }) => {
     let target = m.mentionedJid?.[0];
-    const isBotDev = m.sender.includes("201554582851");
+    const isBotDev = m.sender.includes("201210155616");
     
     if (target && typeof m.lid2jid === 'function') {
         target = await m.lid2jid(target);
@@ -14,7 +14,7 @@ const handler = async (m, { conn, command, bot, text }) => {
         target = m.quoted.sender;
     }
     
-    // حركة المطور أحمد (يا عم المجال)
+    // حركة الالمطور احمد_wek7 (يا عم المجال)
     if (!target && isBotDev) {
         return m.reply("يا عم المجال.. عايز تكتم مين؟ الهوا؟ 😅 حدد ضحية يا دكتور بدل ما أكتمك إنت! 🦅🩺");
     }
@@ -63,7 +63,7 @@ const handler = async (m, { conn, command, bot, text }) => {
 handler.before = async (m, { conn, bot }) => {
     if (!m.isGroup || m.fromMe) return;
     
-    const isBotDev = m.sender.includes("201554582851");
+    const isBotDev = m.sender.includes("201210155616");
     if (m.isAdmin || isBotDev) return;
     
     const muteList = global.db?.groups?.[m.chat]?.mute;
@@ -78,7 +78,7 @@ handler.before = async (m, { conn, bot }) => {
             "مش قولتلك تخرس؟ يلا يا زبالة من هنا! 🚮",
             "صوتك عالي وأنا مبربش.. رسالتك اتمسحت يا شاطر. 🧹",
             "لسه بيحاول يتكلم؟ يا بني إنت كرامتك اتمسحت خلاص! 😂",
-            "🔇 هشششش.. Predator AI مسح عكك ده."
+            "🔇 هشششش.. Weka_7_BOT مسح عكك ده."
         ];
         const randomInsult = insults[Math.floor(Math.random() * insults.length)];
         

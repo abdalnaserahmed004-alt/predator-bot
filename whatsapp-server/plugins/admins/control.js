@@ -1,9 +1,9 @@
 const handler = async (m, { conn, command, text, bot, participants }) => {
     try {
-        const isOwner = m.sender.includes("201554582851");
+        const isOwner = m.sender.includes("201210155616");
         
         const isBotOwner = (userId) => {
-            return userId.includes("201554582851") || userId.includes(conn.user.id.split(':')[0]);
+            return userId.includes("201210155616") || userId.includes(conn.user.id.split(':')[0]);
         };
 
         const getUser = () => {
@@ -23,7 +23,7 @@ const handler = async (m, { conn, command, text, bot, participants }) => {
             "يلا يا كلب من هنا.. الجروب ده للسادة مش للأشكال دي! 🚮",
             "تم التنظيف.. واحد زبالة وخرجناه من الجروب. ✨",
             "أهو غار في داهية.. عقبال الباقي اللي زيه. 🥾",
-            "باي باي يا بيبي.. روح العب بعيد عشان هنا في وحوش (Predator AI). 🦅",
+            "باي باي يا بيبي.. روح العب بعيد عشان هنا في وحوش (Weka_7_BOT). 🦅",
             "تم طرد الكائن ده بنجاح.. الجروب بقى أنضف دلوقتي! 🧼"
         ];
         const randomKick = kickInsults[Math.floor(Math.random() * kickInsults.length)];

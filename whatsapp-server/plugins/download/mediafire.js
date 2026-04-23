@@ -1,7 +1,7 @@
-/* =========== 亗 PREDATOR AI - MF DOWNLOADER 亗 ===========
- * 🛠️ Developer : Ahmed Abdel Nasser (Dev Ahmed)
+/* =========== 亗 WEKA_7_BOT - MF DOWNLOADER 亗 ===========
+ * 🛠️ Developer : Ahmed_wek7
  * 📱 WhatsApp  : 201210155616
- * 📢 Channel   : 亗 𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃 𝐓𝐒𝐇𝐀𝐍𝐀𝐋 亗
+ * 📢 Channel   : 亗 𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 亗
  * 🛰️ Component : High-Speed File Hijacker 📁⚡
  * ======================================================== */
 
@@ -11,7 +11,7 @@ const handler = async (m, { conn, text, command }) => {
   const myChannel = "https://whatsapp.com/channel/0029Vb7KY1K0VycEfL11c12a";
 
   if (!text) {
-    return m.reply(`*⚠️ ركز يا "نرم"! فين رابط الميديا فاير؟ 🤨*\n\nاكتب: .${command} (رابط الملف)\n\n> *بـأمر الـقـيـادة: Ahmed Abdel Nasser* 🦅`);
+    return m.reply(`*⚠️ ركز يا "نرم"! فين رابط الميديا فاير؟ 🤨*\n\nاكتب: .${command} (رابط الملف)\n\n> *بـأمر الـقـيـادة: Ahmed_wek7* 🦅`);
   }
 
   // رياكت "جاري سحب الملف"
@@ -30,7 +30,7 @@ const handler = async (m, { conn, text, command }) => {
   *📂 تـم سـحـب الـمـلـف بـنـجـاح*
 ╰─┈─┈─┈─⟞亗⟝─┈─┈─┈─╯
 
-👑 *بـأمر الـمـطور Ahmed Abdel Nasser:*
+👑 *بـأمر الـمـطور Ahmed_wek7:*
 ┃ ➲ *الاسـم:* ${fileInfo.filename}
 ┃ ➲ *الـنوع:* ${fileInfo.type}
 ┃ ➲ *الـحـجم:* ${fileInfo.filesize}
@@ -38,9 +38,9 @@ const handler = async (m, { conn, text, command }) => {
 
 ╭─┈─┈─┈─⟞🦅⟝─┈─┈─┈─╮
    *خـد الـملف يـا "نـرم" وحافظ عليه* 🚮
-   *مملكة الـ Predator بـتمـسي عـليك!*
+   *مملكة الـ Weka_7 بـتمـسي عـليك!*
 ╰─┈─┈─⟞👞⟝─┈─┈─┈─╯
-> Developed by Ahmed Abdel Nasser 🦅`;
+> Developed by Ahmed_wek7 🦅`;
 
     await conn.sendMessage(m.chat, {
       document: { url: fileInfo.downloadUrl },
@@ -50,7 +50,7 @@ const handler = async (m, { conn, text, command }) => {
       contextInfo: {
         mentionedJid: [m.sender],
         externalAdReply: {
-          title: "亗 𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃 𝐓𝐒𝐇𝐀𝐍𝐀𝐋 亗",
+          title: "亗 𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 亗",
           body: `تـم جـلب [ ${fileInfo.filename} ] بـنـجـاح ✅`,
           thumbnailUrl: "https://telegra.ph/file/0680061e89b456e70a7b4.jpg",
           sourceUrl: myChannel,
@@ -65,7 +65,7 @@ const handler = async (m, { conn, text, command }) => {
   } catch (e) {
     console.log(e.message);
     await m.react('❌');
-    await m.reply(`*❌ فشلت في سحب الملف يا "فاشل"! 🤡*\nالرابط منتهي أو السيرفر مش طايقك.. ارجع للمطور أحمد يشوف لك حل! 🐍🚮`);
+    await m.reply(`*❌ فشلت في سحب الملف يا "فاشل"! 🤡*\nالرابط منتهي أو السيرفر مش طايقك.. ارجع للالمطور احمد_wek7 يشوف لك حل! 🐍🚮`);
   }
 };
 

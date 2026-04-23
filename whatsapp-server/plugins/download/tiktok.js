@@ -1,7 +1,7 @@
-/* =========== 亗 PREDATOR AI - TIKTOK HIJACKER 亗 ===========
- * 🛠️ Developer : Ahmed Abdel Nasser (Dev Ahmed)
+/* =========== 亗 WEKA_7_BOT - TIKTOK HIJACKER 亗 ===========
+ * 🛠️ Developer : Ahmed_wek7
  * 📱 WhatsApp  : 201210155616
- * 📢 Channel   : 亗 𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃 𝐓𝐒𝐇𝐀𝐍𝐀𝐋 亗
+ * 📢 Channel   : 亗 𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 亗
  * 🛰️ Component : Global TikTok Data Extractor 📥⚡
  * ======================================================== */
 
@@ -14,7 +14,7 @@ const ff = async (m, { text, conn }) => {
   const myChannel = "https://whatsapp.com/channel/0029Vb7KY1K0VycEfL11c12a";
   
   if (!text) {
-    return m.reply(`*⚠️ إنت عبيط يا "نرم"؟ فين رابط التيك توك؟ 🤨*\n\nاكتب: .تيك (الرابط)\n\n> *بـأمر الـقـيـادة: Ahmed Abdel Nasser* 🦅`);
+    return m.reply(`*⚠️ إنت عبيط يا "نرم"؟ فين رابط التيك توك؟ 🤨*\n\nاكتب: .تيك (الرابط)\n\n> *بـأمر الـقـيـادة: Ahmed_wek7* 🦅`);
   }
 
   // رياكت "جاري سحب التيك توك"
@@ -25,23 +25,23 @@ const ff = async (m, { text, conn }) => {
 
     if (!videoData.videoUrl && !videoData.audioUrl) {
       await m.react('❌');
-      return m.reply(`*❌ السيرفر طردك يا "فاشل"! 🤡*\nالرابط غلط أو الفيديو اتمسح.. روح اتعلم من المطور أحمد إزاي تجيب روابط! 🚮`);
+      return m.reply(`*❌ السيرفر طردك يا "فاشل"! 🤡*\nالرابط غلط أو الفيديو اتمسح.. روح اتعلم من الالمطور احمد_wek7 إزاي تجيب روابط! 🚮`);
     }
 
     const msg = `╭─┈─┈─┈─⟞亗⟝─┈─┈─┈─╮
   *📥 تـم سـحب الـبيانات بـنجاح*
 ╰─┈─┈─┈─⟞亗⟝─┈─┈─┈─╯
 
-👑 *بـأمر الـقائد Ahmed Abdel Nasser:*
+👑 *بـأمر الـقائد Ahmed_wek7:*
 ┃ ➲ *الـمـبدع:* ${videoData.author || "غير معروف"}
 ┃ ➲ *الـوصـف:* ${videoData.description || "بدون وصف"}
 ┃ ➲ *الـطلب بـواسطة:* @${m.sender.split('@')[0]}
 
 ╭─┈─┈─┈─⟞🦅⟝─┈─┈─┈─╮
    *خـد الـفيديو يـا "نـرم" وابـعد عني* 🚮
-   *مملكة الـ Predator تـحييكم!*
+   *مملكة الـ Weka_7 تـحييكم!*
 ╰─┈─┈─⟞👞⟝─┈─┈─┈─╯
-> Developed by Ahmed Abdel Nasser 🦅`;
+> Developed by Ahmed_wek7 🦅`;
 
     if (videoData.videoUrl) {
       await conn.sendMessage(m.chat, { 
@@ -50,7 +50,7 @@ const ff = async (m, { text, conn }) => {
         contextInfo: {
           mentionedJid: [m.sender],
           externalAdReply: {
-            title: "亗 𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃 𝐓𝐒𝐇𝐀𝐍𝐀𝐋 亗",
+            title: "亗 𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 亗",
             body: "تـم تـحميل تـيك تـوك بـنـجاح ✅",
             thumbnailUrl: "https://telegra.ph/file/0680061e89b456e70a7b4.jpg",
             sourceUrl: myChannel,
@@ -75,7 +75,7 @@ const ff = async (m, { text, conn }) => {
   } catch (error) {
     console.error(error.message);
     await m.react('❌');
-    m.reply(`*❌ حصل عطل فني يا "دمج"! 🤡*\nالرابط ده مش نافع.. ابعت سكرين للمطور أحمد يصلحلك خيبتك! 🐍🚮`);
+    m.reply(`*❌ حصل عطل فني يا "دمج"! 🤡*\nالرابط ده مش نافع.. ابعت سكرين للالمطور احمد_wek7 يصلحلك خيبتك! 🐍🚮`);
   }
 };
 

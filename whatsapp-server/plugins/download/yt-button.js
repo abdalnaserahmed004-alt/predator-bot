@@ -1,13 +1,13 @@
-/* =========== 亗 PREDATOR AI - YT SEARCH 亗 ===========
- * 🛠️ Developer : Ahmed Abdel Nasser (Dev Ahmed)
+/* =========== 亗 WEKA_7_BOT - YT SEARCH 亗 ===========
+ * 🛠️ Developer : Ahmed_wek7
  * 📱 WhatsApp  : 201210155616
- * 📢 Channel   : 亗 𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃 𝐓𝐒𝐇𝐀𝐍𝐀𝐋 亗
+ * 📢 Channel   : 亗 𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 亗
  * 🔗 Link      : https://whatsapp.com/channel/0029Vb7KY1K0VycEfL11c12a
  * ======================================================== */
 
 const handler = async (m, { conn, text }) => {
     const myChannel = "https://whatsapp.com/channel/0029Vb7KY1K0VycEfL11c12a";
-    const devName = "Ahmed Abdel Nasser";
+    const devName = "Ahmed_wek7";
 
     if (!text) {
         return m.reply(`*⚠️ إنت عبيط يا "نرم"؟ اكتب اسم الحاجة اللي عايز تبحث عنها! 🤨*\n\n> *بـأمر الـقـائد: ${devName}* 🦅`);
@@ -22,7 +22,7 @@ const handler = async (m, { conn, text }) => {
         
         if (!data || data.length === 0) {
             await m.react('❌');
-            return m.reply(`*❌ ملقتش حاجة بالاسم ده يا "فاشل"! 🤡*\nجرب تبحث عن حاجة عدلة زي المطور أحمد! 🐍🚮`);
+            return m.reply(`*❌ ملقتش حاجة بالاسم ده يا "فاشل"! 🤡*\nجرب تبحث عن حاجة عدلة زي الالمطور احمد_wek7! 🐍🚮`);
         }
 
         const { title, image, timestamp: time, url } = data[0];
@@ -38,20 +38,20 @@ const handler = async (m, { conn, text }) => {
 
 ╭─┈─┈─┈─⟞🦅⟝─┈─┈─┈─╮
    *اختار عايز تسحب البيانات إزاي يا "نرم"* 🚮
-   *مملكة الـ Predator تـسيطر!*
+   *مملكة الـ Weka_7 تـسيطر!*
 ╰─┈─┈─⟞👞⟝─┈─┈─┈─╯`;
 
         await conn.sendButton(m.chat, {
             imageUrl: image,
             bodyText: body,
-            footerText: `© Developed by Ahmed Abdel Nasser 🦅`,
+            footerText: `© Developed by Ahmed_wek7 🦅`,
             buttons: [
                 { name: "quick_reply", params: { display_text: "🎼 ╎ سـحـب الـصـوت", id: `.يوت_اغنيه ${url}` } },
                 { name: "quick_reply", params: { display_text: "🎬 ╎ اخـتـراق الـفـيـديـو", id: `.يوتيوب ${url}` } }
             ],
             mentions: [m.sender],
             newsletter: { 
-                name: "亗 𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃 𝐓𝐒𝐇𝐀𝐍𝐀𝐋 亗", 
+                name: "亗 𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 亗", 
                 jid: "120363225356834044@newsletter" 
             },
             interactiveConfig: { 
@@ -67,7 +67,7 @@ const handler = async (m, { conn, text }) => {
     } catch (e) {
         console.error(e);
         await m.react('❌');
-        m.reply(`*❌ الرادار عطلان يا "دمج"! 🤡*\nده أكيد بسبب ذكائك المحدود.. ارجع للمطور أحمد! 🐍🚮`);
+        m.reply(`*❌ الرادار عطلان يا "دمج"! 🤡*\nده أكيد بسبب ذكائك المحدود.. ارجع للالمطور احمد_wek7! 🐍🚮`);
     }
 };
 

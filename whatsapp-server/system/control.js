@@ -22,11 +22,11 @@ const group = async (ctx, event, eventType) => {
 
         await ctx.sock.msgUrl(event.chat, txt, {
             img: "https://i.pinimg.com/originals/e2/21/20/e221203f319df949ee65585a657501a2.jpg",
-            title: "亗 𝐏𝐑𝐄𝐃𝐀𝐓𝐎𝐑 𝐒𝐘𝐒𝐓𝐄𝐌 亗",
-            body: "𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃 𝐀𝐁𝐃𝐄𝐋 𝐍𝐀𝐒𝐒𝐄𝐑 🦅",
+            title: "亗 𝐖𝐄𝐊𝐀_𝟕 𝐒𝐘𝐒𝐓𝐄𝐌 亗",
+            body: "𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 🦅",
             mentions: author ? [author, ...event.participants] : event.participants,
             sourceUrl: "https://whatsapp.com/channel/0029Vb7KY1K0VycEfL11c12a",
-            newsletter: { name: '亗 𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃 𝐓𝐒𝐇𝐀𝐍𝐀𝐋 亗', jid: '120363225356834044@newsletter' }
+            newsletter: { name: '亗 𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 亗', jid: '120363225356834044@newsletter' }
         });
     } catch (e) { console.error(e); }
     return null;
@@ -52,9 +52,9 @@ const access = async (msg, checkType, time) => {
     if (messages[checkType]) {
         await conn.msgUrl(msg.chat, messages[checkType], {
             img: "https://i.pinimg.com/originals/02/c3/51/02c351dfd4eb72a62f225ce964dc510d.jpg",
-            title: "亗 𝐏𝐑𝐄𝐃𝐀𝐓𝐎𝐑 𝐖𝐀𝐑𝐍𝐈𝐍𝐆 亗",
+            title: "亗 𝐖𝐄𝐊𝐀_𝟕 𝐖𝐀𝐑𝐍𝐈𝐍𝐆 亗",
             sourceUrl: "https://whatsapp.com/channel/0029Vb7KY1K0VycEfL11c12a",
-            newsletter: { name: '亗 𝐏𝐑𝐄𝐃𝐀𝐓𝐎𝐑 𝐔𝐏𝐃𝐀𝐓𝐄𝐒 亗', jid: '120363225356834044@newsletter' }
+            newsletter: { name: '亗 𝐖𝐄𝐊𝐀_𝟕 𝐔𝐏𝐃𝐀𝐓𝐄𝐒 亗', jid: '120363225356834044@newsletter' }
         });
         return false;
     }

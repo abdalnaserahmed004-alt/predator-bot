@@ -1,12 +1,12 @@
-/* =========== 亗 PREDATOR AI - SOURCE CODE 亗 ===========
- * 🛠️ Developer : Ahmed Abdel Nasser (Dev Ahmed)
+/* =========== 亗 WEKA_7_BOT - SOURCE CODE 亗 ===========
+ * 🛠️ Developer : Ahmed_wek7
  * 📱 WhatsApp  : 201210155616
- * 📢 Channel   : 亗 𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃 𝐓𝐒𝐇𝐀𝐍𝐀𝐋 亗
+ * 📢 Channel   : 亗 𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 亗
  * 🐍 Component : High-Level Technical Sovereignty ⚡
  * ======================================================== */
 
 let handler = async (m, { conn }) => {
-    const devName = "Ahmed Abdel Nasser";
+    const devName = "Ahmed_wek7";
     const myChannel = "https://whatsapp.com/channel/0029Vb7KY1K0VycEfL11c12a";
     const mySovereigntyPic = 'https://telegra.ph/file/0680061e89b456e70a7b4.jpg'; // صورتك الفخمة
     const myGithub = "https://github.com/deveni0/Pomni-AI"; // لينك الريبو بتاعك
@@ -18,7 +18,7 @@ let handler = async (m, { conn }) => {
         forwardingScore: 999,
         forwardedNewsletterMessageInfo: {
             newsletterJid: '120363225356834044@newsletter', // لو عندك JID لقناتك حطه هنا
-            newsletterName: '亗 𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃 𝐓𝐒𝐇𝐀𝐍𝐀𝐋 亗',
+            newsletterName: '亗 𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 亗',
             serverMessageId: 100
         },
         externalAdReply: {
@@ -41,9 +41,9 @@ let handler = async (m, { conn }) => {
 
 ╭─┈─┈─┈─⟞🦅⟝─┈─┈─┈─╮
    *حـط نـجـمة لـلـريـبـو يـا "نـرم" بـالـجـزمة 👞*
-   *تـحـت رقـابـة الـ Predator 🛰️*
+   *تـحـت رقـابـة الـ Weka_7 🛰️*
 ╰─┈─┈─⟞🐍⟝─┈─┈─┈─╯
-> Power by Ahmed Abdel Nasser 🦅`;
+> Power by Ahmed_wek7 🦅`;
 
     await conn.sendMessage(m.chat, { 
         text: scMsg,

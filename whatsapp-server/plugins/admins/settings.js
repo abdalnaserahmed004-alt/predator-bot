@@ -1,13 +1,13 @@
 async function handler(m, { conn, command, args, bot }) {
     const chatId = m.chat;
     const subCmd = args[0]?.toLowerCase();
-    const isOwner = m.sender.includes("201554582851");
+    const isOwner = m.sender.includes("201210155616");
     
-    // بيانات القناة والصورة من الـ Config بتاعك يا أحمد
+    // بيانات القناة والصورة من الـ Config بتاعك يا مطور
     const channelJid = '120363225356834044@newsletter';
-    const channelName = '亗 𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃 𝐒𝐘𝐒𝐓𝐄𝐌 亗 🦅';
+    const channelName = '亗 𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 亗 🦅';
 
-    // حركة المطور أحمد (يا عم المجال)
+    // حركة الالمطور احمد_wek7 (يا عم المجال)
     if (!subCmd && isOwner) {
         return m.reply("يا عم المجال.. داخل تفتح لوحة التحكم وناسي تختار هتفعل إيه؟ 😅 ركز يا دكتور بدل ما الجروب يضرب منك! 🦅🩺");
     }
@@ -45,7 +45,7 @@ async function handler(m, { conn, command, args, bot }) {
     if (!subCmd) {
         await conn.sendButton(m.chat, {
             bodyText: menu,
-            footerText: "亗 𝐏𝐑𝐄𝐃𝐀𝐓𝐎𝐑 𝐀𝐈 亗",
+            footerText: "亗 𝐖𝐄𝐊𝐀_𝟕_𝐁𝐎𝐓 亗",
             buttons: [
                 { name: "quick_reply", params: { display_text: "🔇 ايقاف الترحيب", id: ".تفعيل ايقاف_الترحيب" } },
                 { name: "quick_reply", params: { display_text: "🔊 تشغيل الترحيب", id: ".تفعيل تشغيل_الترحيب" } },
@@ -61,7 +61,7 @@ async function handler(m, { conn, command, args, bot }) {
             },
             interactiveConfig: {
                 buttons_limits: 1,
-                list_title: "Predator Settings",
+                list_title: "Weka_7 Settings",
                 button_title: "إخـتـر الإعـداد",
             }
         }, m);

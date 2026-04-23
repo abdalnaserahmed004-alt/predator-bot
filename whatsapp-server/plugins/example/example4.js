@@ -1,13 +1,13 @@
-/* =========== 亗 PREDATOR AI - CAROUSEL OF POWER 亗 ===========
- * 🛠️ Developer : Ahmed Abdel Nasser (Dev Ahmed)
+/* =========== 亗 WEKA_7_BOT - CAROUSEL OF POWER 亗 ===========
+ * 🛠️ Developer : Ahmed_wek7
  * 📱 WhatsApp  : 201210155616
- * 📢 Channel   : 亗 𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃 𝐓𝐒𝐇𝐀𝐍𝐀𝐋 亗
+ * 📢 Channel   : 亗 𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 亗
  * 🛰️ Component : Interactive Sovereignty Interface ⚡
  * ======================================================== */
 
 const example = async (m, { conn }) => {
   const myChannel = "https://whatsapp.com/channel/0029Vb7KY1K0VycEfL11c12a";
-  const devName = "Ahmed Abdel Nasser";
+  const devName = "Ahmed_wek7";
   const mySovereigntyPic = 'https://telegra.ph/file/0680061e89b456e70a7b4.jpg'; // صورتك الجاحدة
 
   await conn.sendCarousel(m.chat, {
@@ -16,7 +16,7 @@ const example = async (m, { conn }) => {
     cards: [
       {
         imageUrl: mySovereigntyPic,
-        bodyText: `*亗 بـوابـة الـجـحـيـم الـرقـمـي 亗*\n\nأهلاً بك في نظام الـ Predator. هنا يتم سحق "المنبطحين" برمجياً تحت إشراف ${devName}.`,
+        bodyText: `*亗 بـوابـة الـجـحـيـم الـرقـمـي 亗*\n\nأهلاً بك في نظام الـ Weka_7. هنا يتم سحق "المنبطحين" برمجياً تحت إشراف ${devName}.`,
         footerText: '🦅 Master Logic Control',
         buttons: [
           { name: 'quick_reply', params: { display_text: '🫡 تـقـديم الـولاء', id: '.تست' } },
@@ -29,7 +29,7 @@ const example = async (m, { conn }) => {
         footerText: '🛰️ Advanced Tracking System',
         buttons: [
           { name: 'quick_reply', params: { display_text: '👞 أنـا نـرم مـطـيـع', id: '.حذف_تسجيلي' } },
-          { name: 'cta_copy', params: { display_text: '📋 نـسخ شـفـرة أحـمـد', copy_code: `PREDATOR-DEV-AHMED-V1` } }
+          { name: 'cta_copy', params: { display_text: '📋 نـسخ شـفـرة أحـمـد', copy_code: `WEKA_7-DEV-AHMED_WEK7-V1` } }
         ]
       },
       {
@@ -56,7 +56,7 @@ const example = async (m, { conn }) => {
     ],
     mentions: [m.sender],
     newsletter: {
-        name: `亗 𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃 𝐓𝐒𝐇𝐀𝐍𝐀𝐋 亗`,
+        name: `亗 𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 亗`,
         jid: '120363225356834044@newsletter'
       },
   }, m)

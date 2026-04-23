@@ -1,7 +1,7 @@
-/* =========== 亗 PREDATOR AI - IG DOWNLOADER 亗 ===========
- * 🛠️ Developer : Ahmed Abdel Nasser (Dev Ahmed)
+/* =========== 亗 WEKA_7_BOT - IG DOWNLOADER 亗 ===========
+ * 🛠️ Developer : Ahmed_wek7
  * 📱 WhatsApp  : 201210155616
- * 📢 Channel   : 亗 𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃 𝐓𝐒𝐇𝐀𝐍𝐀𝐋 亗
+ * 📢 Channel   : 亗 𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 亗
  * 🛰️ Component : High-Speed Instagram Hijacker 📸⚡
  * ======================================================== */
 
@@ -9,7 +9,7 @@ const insta = async (m, { text, Api, conn }) => {
   const myChannel = "https://whatsapp.com/channel/0029Vb7KY1K0VycEfL11c12a";
 
   if (!text) {
-    return m.reply(`*⚠️ ركز يا "نرم"! فين رابط الإنستا؟ 🤨*\n\nاكتب: .انستا (الرابط)\n\n> *بـأمر الـقـيـادة: Ahmed Abdel Nasser* 🦅`);
+    return m.reply(`*⚠️ ركز يا "نرم"! فين رابط الإنستا؟ 🤨*\n\nاكتب: .انستا (الرابط)\n\n> *بـأمر الـقـيـادة: Ahmed_wek7* 🦅`);
   }
 
   // رياكت "جاري الاختراق"
@@ -20,7 +20,7 @@ const insta = async (m, { text, Api, conn }) => {
 
     if (status !== 'success') {
       await m.react("❌");
-      return m.reply(`*❌ السيرفر مش طايقك يا "دمج"! 🤡*\nالرابط غلط أو الفيديو خاص.. روح اتعلم إزاي تجيب روابط من المطور أحمد! 🚮`);
+      return m.reply(`*❌ السيرفر مش طايقك يا "دمج"! 🤡*\nالرابط غلط أو الفيديو خاص.. روح اتعلم إزاي تجيب روابط من الالمطور احمد_wek7! 🚮`);
     }
 
     if (Array.isArray(data)) {
@@ -35,16 +35,16 @@ const insta = async (m, { text, Api, conn }) => {
   *📥 تـم سـحب بـيانات الإنـستا*
 ╰─┈─┈─┈─⟞亗⟝─┈─┈─┈─╯
 
-👑 *بـأمر الـقائد Ahmed Abdel Nasser:*
+👑 *بـأمر الـقائد Ahmed_wek7:*
 ┃ ➲ *الـمـخترق:* @${m.sender.split('@')[0]}
 ┃ ➲ *الـحالة:* تم الجلب بـنجاح ✅
-┃ ➲ *الـقـناة:* Dv. AHMED TSHANAL
+┃ ➲ *الـقـناة:* Ahmed_wek7 TSHANAL
 
 ╭─┈─┈─┈─⟞🦅⟝─┈─┈─┈─╮
    *خـد الـريلز يـا "نـرم" وطـير مـن هـنا* 🚮
-   *مملكة الـ Predator دايمـاً فـي الـصدارة!*
+   *مملكة الـ Weka_7 دايمـاً فـي الـصدارة!*
 ╰─┈─┈─⟞👞⟝─┈─┈─┈─╯
-> Developed by Ahmed Abdel Nasser 🦅`;
+> Developed by Ahmed_wek7 🦅`;
 
       if (video) {
         await conn.sendMessage(m.chat, { 
@@ -53,8 +53,8 @@ const insta = async (m, { text, Api, conn }) => {
           contextInfo: {
             mentionedJid: [m.sender],
             externalAdReply: {
-              title: "亗 𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃 𝐓𝐒𝐇𝐀𝐍𝐀𝐋 亗",
-              body: "تـم الـتـحـميل بـواسـطـة Ahmed Abdel Nasser",
+              title: "亗 𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 亗",
+              body: "تـم الـتـحـميل بـواسـطـة Ahmed_wek7",
               thumbnailUrl: thumbnail || "https://telegra.ph/file/0680061e89b456e70a7b4.jpg",
               sourceUrl: myChannel,
               mediaType: 1,
@@ -70,7 +70,7 @@ const insta = async (m, { text, Api, conn }) => {
   } catch (error) {
     console.error(error.message);
     await m.react("❌");
-    m.reply(`*❌ فشلت العملية يا "فاشل"! 🤡*\nده خطأ برمجي.. ابعت اسكرين للمطور أحمد يصلح لك خيبتك! 🐍`);
+    m.reply(`*❌ فشلت العملية يا "فاشل"! 🤡*\nده خطأ برمجي.. ابعت اسكرين للالمطور احمد_wek7 يصلح لك خيبتك! 🐍`);
   }
 };
 

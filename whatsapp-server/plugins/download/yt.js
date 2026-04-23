@@ -1,7 +1,7 @@
-/* =========== 亗 PREDATOR AI - YOUTUBE HIJACKER 亗 ===========
- * 🛠️ Developer : Ahmed Abdel Nasser (Dev Ahmed)
+/* =========== 亗 WEKA_7_BOT - YOUTUBE HIJACKER 亗 ===========
+ * 🛠️ Developer : Ahmed_wek7
  * 📱 WhatsApp  : 201210155616
- * 📢 Channel   : 亗 𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃 𝐓𝐒𝐇𝐀𝐍𝐀𝐋 亗
+ * 📢 Channel   : 亗 𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 亗
  * 🛰️ Component : Professional YT Data Extractor 🎥⚡
  * ======================================================== */
 
@@ -9,7 +9,7 @@ import { Scrapy } from "meowsab";
 
 const handler = async (m, { conn, command, text }) => {
   const myChannel = "https://whatsapp.com/channel/0029Vb7KY1K0VycEfL11c12a";
-  const devName = "Ahmed Abdel Nasser";
+  const devName = "Ahmed_wek7";
 
   if (!text) {
     return m.reply(`*⚠️ إنت عبيط يا "نرم"؟ فين رابط اليوتيوب؟ 🤨*\n\nاكتب: .${command} (الرابط)\n\n> *بـأمر الـقائد: ${devName}* 🦅`);
@@ -42,7 +42,7 @@ const handler = async (m, { conn, command, text }) => {
     caption += `   *خـد الـمـحتوى يـا "نـرم" وفـكـنا* 🚮\n`;
     caption += `   *مـمنوع اسـتـخـدامـه فـيـما يـغـضب الله!*\n`;
     caption += `╰─┈─┈─┈─⟞👞⟝─┈─┈─┈─╯\n`;
-    caption += `> Developed by Ahmed Abdel Nasser 🦅`;
+    caption += `> Developed by Ahmed_wek7 🦅`;
 
     // الرسالة الأولى: بيانات الملف بهوية القناة الجديدة
     await conn.sendMessage(m.chat, { 
@@ -50,7 +50,7 @@ const handler = async (m, { conn, command, text }) => {
       contextInfo: {
         mentionedJid: [m.sender],
         externalAdReply: {
-          title: `亗 𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃 𝐓𝐒𝐇𝐀𝐍𝐀𝐋 亗`,
+          title: `亗 𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 亗`,
           body: `جـاري تـحـميـل: ${res.title}`,
           thumbnailUrl: res.thumbnail,
           sourceUrl: myChannel,
@@ -81,7 +81,7 @@ const handler = async (m, { conn, command, text }) => {
   } catch (e) {
     console.log(e.message);
     await m.react('❌');
-    await m.reply(`*❌ السيرفر طردك يا "فاشل"! 🤡*\nالرابط ميت أو الخدمة واقفة.. روح عيط للمطور أحمد! 🐍🚮`);
+    await m.reply(`*❌ السيرفر طردك يا "فاشل"! 🤡*\nالرابط ميت أو الخدمة واقفة.. روح عيط للالمطور احمد_wek7! 🐍🚮`);
   }
 };
 

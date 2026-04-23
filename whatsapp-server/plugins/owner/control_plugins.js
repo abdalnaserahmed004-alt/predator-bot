@@ -1,7 +1,7 @@
-/* =========== 亗 PREDATOR AI - FILE ENGINEER 亗 ===========
- * 🛠️ Developer : Ahmed Abdel Nasser (Dev Ahmed)
+/* =========== 亗 WEKA_7_BOT - FILE ENGINEER 亗 ===========
+ * 🛠️ Developer : Ahmed_wek7
  * 📱 WhatsApp  : 201210155616
- * 📢 Channel   : 亗 𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃 𝐓𝐒𝐇𝐀𝐍𝐀𝐋 亗
+ * 📢 Channel   : 亗 𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 亗
  * 🐍 Component : High-Level System Architecture ⚡
  * ======================================================== */
 
@@ -9,7 +9,7 @@ import fs from 'fs';
 import path from 'path';
 
 const handler = async (m, { conn, bot, command }) => {
-    const devName = "Ahmed Abdel Nasser";
+    const devName = "Ahmed_wek7";
     const myChannel = "https://whatsapp.com/channel/0029Vb7KY1K0VycEfL11c12a";
     const mySovereigntyPic = 'https://telegra.ph/file/0680061e89b456e70a7b4.jpg'; // صورتك الفخمة
     const base = bot.config?.commandsPath || './plugins';
@@ -64,7 +64,7 @@ const handler = async (m, { conn, bot, command }) => {
         
         if (!m.quoted) return m.reply(`*⚠️ إنت عبيط يا "نرم"؟ رد عـلى الكـود اللي عايز تـزرعه فـي سورس ${devName}! 🤡*`);
         const content = m.quoted.text || m.quoted.msg;
-        if (!content) return m.reply(`*❌ الـكود فـاضـي يـا "دمـج".. مـتـضيـعـش وقـت الـ Predator! 🚮*`);
+        if (!content) return m.reply(`*❌ الـكود فـاضـي يـا "دمـج".. مـتـضيـعـش وقـت الـ Weka_7! 🚮*`);
         
         const parts = target.split('/');
         const name = parts.pop();
@@ -77,13 +77,13 @@ const handler = async (m, { conn, bot, command }) => {
         const filePath = path.join(dir, `${name}.js`);
         fs.writeFileSync(filePath, content);
         
-        const successAdd = `╭─┈─┈─┈─⟞亗⟝─┈─┈─┈─╮\n  *✅ تـم زراعة الـمـلـف بـنـجاح* 亗\n╰─┈─┈─┈─⟞亗⟝─┈─┈─┈─╯\n\n┃ ➲ الـمـسار: \`${path.relative(base, filePath)}\`\n┃ ➲ الـمـهندس: ${devName}\n\n> الـسـورس يـتـطور بـأمـر الـ Predator 🦅`;
+        const successAdd = `╭─┈─┈─┈─⟞亗⟝─┈─┈─┈─╮\n  *✅ تـم زراعة الـمـلـف بـنـجاح* 亗\n╰─┈─┈─┈─⟞亗⟝─┈─┈─┈─╯\n\n┃ ➲ الـمـسار: \`${path.relative(base, filePath)}\`\n┃ ➲ الـمـهندس: ${devName}\n\n> الـسـورس يـتـطور بـأمـر الـ Weka_7 🦅`;
         
         await conn.sendMessage(m.chat, { 
             text: successAdd,
             contextInfo: {
                 externalAdReply: {
-                    title: "亗 𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃 𝐓𝐒𝐇𝐀𝐍𝐀𝐋 亗",
+                    title: "亗 𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 亗",
                     body: `File Engineering by: ${devName} 🦅`,
                     thumbnailUrl: mySovereigntyPic,
                     sourceUrl: myChannel,
@@ -118,13 +118,13 @@ const handler = async (m, { conn, bot, command }) => {
         };
         clean(path.dirname(filePath));
         
-        const successDel = `╭─┈─┈─┈─⟞亗⟝─┈─┈─┈─╮\n  *🗑️ تـم مـسح الـمـلـف مـن الـذاكـرة* 亗\n╰─┈─┈─┈─⟞亗⟝─┈─┈─┈─╯\n\n┃ ➲ الـمـلـف: \`${path.relative(base, filePath)}\`\n┃ ➲ الـقـرار: إبـادة نـهـائـية\n\n> تـم تـنـظـيف الـسورس بـأمـر الـ Predator 🦅`;
+        const successDel = `╭─┈─┈─┈─⟞亗⟝─┈─┈─┈─╮\n  *🗑️ تـم مـسح الـمـلـف مـن الـذاكـرة* 亗\n╰─┈─┈─┈─⟞亗⟝─┈─┈─┈─╯\n\n┃ ➲ الـمـلـف: \`${path.relative(base, filePath)}\`\n┃ ➲ الـقـرار: إبـادة نـهـائـية\n\n> تـم تـنـظـيف الـسورس بـأمـر الـ Weka_7 🦅`;
 
         await conn.sendMessage(m.chat, { 
             text: successDel,
             contextInfo: {
                 externalAdReply: {
-                    title: "亗 𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃 𝐓𝐒𝐇𝐀𝐍𝐀𝐋 亗",
+                    title: "亗 𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 亗",
                     body: `System Cleanup by: ${devName} 🦅`,
                     thumbnailUrl: mySovereigntyPic,
                     sourceUrl: myChannel,

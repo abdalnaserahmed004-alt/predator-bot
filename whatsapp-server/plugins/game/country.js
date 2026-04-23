@@ -1,11 +1,11 @@
-/* =========== 亗 PREDATOR AI - FLAG RADAR 亗 ===========
- * 🛠️ Developer : Ahmed Abdel Nasser (Dev Ahmed)
+/* =========== 亗 WEKA_7_BOT - FLAG RADAR 亗 ===========
+ * 🛠️ Developer : Ahmed_wek7
  * 📱 WhatsApp  : 201210155616
- * 📢 Channel   : 亗 𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃 𝐓𝐒𝐇𝐀𝐍𝐀𝐋 亗
+ * 📢 Channel   : 亗 𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 亗
  * 🌍 Component : Global Flag Recognition (Savage Mode) ⚡
  * ======================================================== */
 
-const devName = "Ahmed Abdel Nasser";
+const devName = "Ahmed_wek7";
 const myChannel = "https://whatsapp.com/channel/0029Vb7KY1K0VycEfL11c12a";
 const myPic = 'https://telegra.ph/file/0680061e89b456e70a7b4.jpg'; // صورتك الجاحدة مع اللوجو
 
@@ -33,14 +33,14 @@ async function handler(m, { conn }) {
    *رُد عـلـى الـصـورة بـاسـم الـدولـة* 🚮
    *تـحـت إشـراف الـقـائد: ${devName}*
 ╰─┈─┈─⟞🐍⟝─┈─┈─┈─╯
-> Power by Ahmed Abdel Nasser 🦅`;
+> Power by Ahmed_wek7 🦅`;
 
     const msg = await conn.sendMessage(m.chat, {
         image: { url: country.img },
         caption: caption,
         contextInfo: {
             externalAdReply: {
-                title: "亗 𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃 𝐓𝐒𝐇𝐀𝐍𝐀𝐋 亗",
+                title: "亗 𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 亗",
                 body: "لـعـبة تـخمـيـن الـأعـلام الـسيادية 🌍",
                 thumbnailUrl: myPic,
                 sourceUrl: myChannel,

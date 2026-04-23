@@ -1,7 +1,7 @@
-/* =========== 亗 PREDATOR AI - CYBER THEFT 亗 ===========
- * 🛠️ Developer : Ahmed Abdel Nasser (Dev Ahmed)
+/* =========== 亗 WEKA_7_BOT - CYBER THEFT 亗 ===========
+ * 🛠️ Developer : Ahmed_wek7
  * 📱 WhatsApp  : 201210155616
- * 📢 Channel   : 亗 𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃 𝐓𝐒𝐇𝐀𝐍𝐀𝐋 亗
+ * 📢 Channel   : 亗 𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 亗
  * 🛰️ Component : XP Hijacker System 💰🏴‍☠️
  * ======================================================== */
 
@@ -16,7 +16,7 @@ const handler = async (m, { conn }) => {
     
     const userTarget = global.db?.users[target];
     if (!userTarget?.xp) return m.reply(`*❌ الفريسة دي "فلات" معندهاش ولا نقطة!*`);
-    if (userTarget.xp < 100) return m.reply(`*🤲 حرام ده "منبطح" كفاية! عنده بس ${userTarget.xp} نقطة*\n> سيبه يجمع شوية للمطور أحمد!`);
+    if (userTarget.xp < 100) return m.reply(`*🤲 حرام ده "منبطح" كفاية! عنده بس ${userTarget.xp} نقطة*\n> سيبه يجمع شوية للالمطور احمد_wek7!`);
     
     const now = Date.now();
     const lastSteal = cooldown.get(m.sender) || 0;
@@ -43,7 +43,7 @@ const handler = async (m, { conn }) => {
   *❌ تـم كـشـف الـتـسلل*
 ╰─┈─┈─⟞🚨⟝─┈─┈─╯
 
-👑 *بـأمر Ahmed Abdel Nasser:*
+👑 *بـأمر Ahmed_wek7:*
 ┃ ➲ @${m.sender.split('@')[0]}
 ┃ 😭 الـحماية كشفتك يا "نرم"!
 ┃ 💸 تـم خـصم ${penalty} نقطة لقلة مهاراتك.
@@ -55,7 +55,7 @@ const handler = async (m, { conn }) => {
             contextInfo: { 
                 mentionedJid: [m.sender],
                 externalAdReply: {
-                    title: "亗 𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃 𝐓𝐒𝐇𝐀𝐍𝐀𝐋 亗",
+                    title: "亗 𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 亗",
                     body: "تـم إحـبـاط مـحـاولة الـسـرقة",
                     sourceUrl: myChannel,
                     mediaType: 1,
@@ -77,20 +77,20 @@ const handler = async (m, { conn }) => {
   *✅ نـجـحـت الـقـرصـنة*
 ╰─┈─┈─⟞💰⟝─┈─┈─╯
 
-👑 *بـأمر Ahmed Abdel Nasser:*
+👑 *بـأمر Ahmed_wek7:*
 ┃ 🏴‍☠️ الـمخترق: @${m.sender.split('@')[0]}
 ┃ 🎯 الـضحية: @${target.split('@')[0]}
 ┃ 💰 الـغـنيمة: +${finalAmount} نقطة XP
 
 ╭─┈─┈─⟞⚡⟝─┈─┈─╮
    *استمر في نهب البيانات*
-   *مملكة الـ Predator تفتخر بك!*
+   *مملكة الـ Weka_7 تفتخر بك!*
 ╰─┈─┈─⟞🦅⟝─┈─┈─╯
-> Developed by Ahmed Abdel Nasser 🦅`,
+> Developed by Ahmed_wek7 🦅`,
         contextInfo: { 
             mentionedJid: [m.sender, target],
             externalAdReply: {
-                title: "亗 𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃 𝐓𝐒𝐇𝐀𝐍𝐀𝐋 亗",
+                title: "亗 𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 亗",
                 body: "تـم نـهـب الـبـيـانات بـنـجـاح ✅",
                 sourceUrl: myChannel,
                 mediaType: 1,

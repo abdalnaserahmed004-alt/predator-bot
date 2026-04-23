@@ -1,5 +1,5 @@
-/* =========== 亗 PREDATOR AI - TREASURY 亗 ===========
- * 🛠️ Developer : Ahmed Abdel Nasser (Dev Ahmed)
+/* =========== 亗 WEKA_7_BOT - TREASURY 亗 ===========
+ * 🛠️ Developer : Ahmed_wek7
  * 🛰️ Component : Royal Rewards System 🎁💰
  * ======================================================== */
 
@@ -43,7 +43,7 @@ const handler = async (m, { conn, command }) => {
     if (lastClaim && (now - lastClaim) < reward.cooldown) {
         const remaining = getTimeRemaining(lastClaim, reward.cooldown);
         const timeLeft = formatTime(remaining);
-        await m.reply(`*⚠️ اتقل يا منبطح.. الجوع وحش!* \n\nباقي لك ${timeLeft} عشان تاخد الهدية الـ ${reward.name} الجاية. \n\n> *بـأمر الـقـيـادة: Ahmed Abdel Nasser* 🦅`);
+        await m.reply(`*⚠️ اتقل يا منبطح.. الجوع وحش!* \n\nباقي لك ${timeLeft} عشان تاخد الهدية الـ ${reward.name} الجاية. \n\n> *بـأمر الـقـيـادة: Ahmed_wek7* 🦅`);
         return;
     }
     
@@ -66,9 +66,9 @@ const handler = async (m, { conn, command }) => {
 
 ╭─┈─┈─┈─⟞✨⟝─┈─┈─┈─╮
    *اسـتـمـر فـي الـتـفاعل لـتـكـون*
-   *مـن جـيـش الـ Predator الـعـظـيم*
+   *مـن جـيـش الـ Weka_7 الـعـظـيم*
 ╰─┈─┈─┈─⟞🦅⟝─┈─┈─┈─╯
-> Developed by Ahmed Abdel Nasser 🦅`;
+> Developed by Ahmed_wek7 🦅`;
 
     await m.react("💰");
 

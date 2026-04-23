@@ -1,19 +1,19 @@
-/* =========== 亗 PREDATOR AI - VISUAL MANIPULATION 亗 ===========
- * 🛠️ Developer : Ahmed Abdel Nasser (Dev Ahmed)
+/* =========== 亗 WEKA_7_BOT - VISUAL MANIPULATION 亗 ===========
+ * 🛠️ Developer : Ahmed_wek7
  * 📱 WhatsApp  : 201210155616
- * 📢 Channel   : 亗 𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃 𝐓𝐒𝐇𝐀𝐍𝐀𝐋 亗
+ * 📢 Channel   : 亗 𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 亗
  * 🐍 Component : Advanced AI Image Editing Protocol ⚡
  * ============================================================ */
 
 import { uploadToCatbox } from "../../system/utils.js";
 
 let handler = async (m, { conn, bot, text }) => {
-  const devName = "Ahmed Abdel Nasser";
+  const devName = "Ahmed_wek7";
   const myChannel = "https://whatsapp.com/channel/0029Vb7KY1K0VycEfL11c12a";
   const mySovereigntyPic = 'https://telegra.ph/file/0680061e89b456e70a7b4.jpg'; // صورتك الفخمة
 
   try {
-    if (!m.quoted?.mimetype) return m.reply(`*⚠️ يـا "نـرم" رد عـلى الـصورة اللي عايز الـ Predator يـعيد تـشكيـلهـا! 🤡*`);
+    if (!m.quoted?.mimetype) return m.reply(`*⚠️ يـا "نـرم" رد عـلى الـصورة اللي عايز الـ Weka_7 يـعيد تـشكيـلهـا! 🤡*`);
     if (!m.quoted.mimetype.startsWith('image/')) return m.reply(`*❌ ده مـش مـلف صـورة يـا "دمـج".. ركـز! 🚮*`);
     if (!text) return m.reply(`*💬 يـا "نـرم" اكـتـب الأمـر الـسيادي (الـتعديل الـمطلوب) عـشان نـبـدأ الـتزييف! 🤡*`);
     
@@ -36,10 +36,10 @@ let handler = async (m, { conn, bot, text }) => {
     
     await m.react("⏳");
     const waitMsg = await conn.sendMessage(m.chat, { 
-        text: `╭─┈─┈─┈─⟞亗⟝─┈─┈─┈─╮\n  *🎨 جـاري تـزييف الـواقع الـبصري* 亗\n╰─┈─┈─┈─⟞亗⟝─┈─┈─┈─╯\n\n👑 *الـقائد ${devName}:*\n┃ ➲ جـاري مـعـالـجـة الـهـدف...\n┃ ➲ الـطـلـب: *(${text})*\n\n> الـ Predator يـعـيـد تـشـكـيـل الـصـورة 🦅`,
+        text: `╭─┈─┈─┈─⟞亗⟝─┈─┈─┈─╮\n  *🎨 جـاري تـزييف الـواقع الـبصري* 亗\n╰─┈─┈─┈─⟞亗⟝─┈─┈─┈─╯\n\n👑 *الـقائد ${devName}:*\n┃ ➲ جـاري مـعـالـجـة الـهـدف...\n┃ ➲ الـطـلـب: *(${text})*\n\n> الـ Weka_7 يـعـيـد تـشـكـيـل الـصـورة 🦅`,
         contextInfo: {
             externalAdReply: {
-                title: "亗 𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃 𝐓𝐒𝐇𝐀𝐍𝐀𝐋 亗",
+                title: "亗 𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 亗",
                 body: `Processing by: ${devName} 🦅`,
                 thumbnailUrl: mySovereigntyPic,
                 sourceUrl: myChannel,
@@ -64,12 +64,12 @@ let handler = async (m, { conn, bot, text }) => {
     
     await conn.sendMessage(m.chat, {
       image: { url: result },
-      caption: `╭─┈─┈─┈─⟞亗⟝─┈─┈─┈─╮\n  *✅ تـم تـزييف الـواقع الـبصري* 亗\n╰─┈─┈─┈─⟞亗⟝─┈─┈─┈─╯\n\n👑 *تـم الـتـنـفـيذ بـأمـر الـقـائد: ${devName}*\n┃ ➲ الـتـعـديـل: *(${text})*\n\n> الـ Predator فـي الـمـكـان يـا نـرمـات 🦅`,
+      caption: `╭─┈─┈─┈─⟞亗⟝─┈─┈─┈─╮\n  *✅ تـم تـزييف الـواقع الـبصري* 亗\n╰─┈─┈─┈─⟞亗⟝─┈─┈─┈─╯\n\n👑 *تـم الـتـنـفـيذ بـأمـر الـقـائد: ${devName}*\n┃ ➲ الـتـعـديـل: *(${text})*\n\n> الـ Weka_7 فـي الـمـكـان يـا نـرمـات 🦅`,
       contextInfo: {
           mentionedJid: [m.sender],
           forwardedNewsletterMessageInfo: {
               newsletterJid: '120363225356834044@newsletter',
-              newsletterName: '亗 𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃 𝐓𝐒𝐇𝐀𝐍𝐀𝐋 亗',
+              newsletterName: '亗 𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 亗',
               serverMessageId: 100
           }
       }

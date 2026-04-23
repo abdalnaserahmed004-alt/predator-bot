@@ -1,5 +1,5 @@
 const handler = async (m, { conn, bot }) => {
-  const isOwner = m.sender.includes("201554582851");
+  const isOwner = m.sender.includes("201210155616");
   const g = global.db.groups?.[m.chat] || {};
   const w = g.warnings || {};
   
@@ -8,7 +8,7 @@ const handler = async (m, { conn, bot }) => {
   const count = w[target] || 0;
   const isSelf = target === m.sender;
 
-  // حركة المطور أحمد (يا عم المجال) لو سأل عن حد مش موجود
+  // حركة الالمطور احمد_wek7 (يا عم المجال) لو سأل عن حد مش موجود
   if (!target && isOwner) {
     return m.reply("يا عم المجال.. بتكشف على مين؟ الهوا؟ 😅 حدد ضحية يا دكتور! 🦅🩺");
   }
@@ -28,17 +28,17 @@ const handler = async (m, { conn, bot }) => {
   // لو عنده إنذارات (السخرية المباشرة)
   let insult = "";
   if (count === 1) insult = "بداية الفشل.. ركز يا حبيبي عشان المرة الجاية هتوحشنا! 🚮";
-  if (count === 2) insult = "فاضلك تكّة وتطير.. جهز شنطتك عشان Predator AI مبيسميش! 🥾";
+  if (count === 2) insult = "فاضلك تكّة وتطير.. جهز شنطتك عشان Weka_7_BOT مبيسميش! 🥾";
 
   await m.react("📉");
 
   await conn.sendMessage(m.chat, {
-    text: `*亗 PREDATOR WARNING RADAR 亗*\n\n👤 الـمـسـتـهـدف: @${target.split("@")[0]}\n⚠️ عـدد الإنـذارات: ${count} / 3\n\n> _${insult}_`,
+    text: `*亗 WEKA_7 WARNING RADAR 亗*\n\n👤 الـمـسـتـهـدف: @${target.split("@")[0]}\n⚠️ عـدد الإنـذارات: ${count} / 3\n\n> _${insult}_`,
     mentions: [target],
     contextInfo: {
         externalAdReply: {
             title: "كشف السجل الجنائي للجروب",
-            body: "Developed by Dev Ahmed",
+            body: "Developed by Ahmed_wek7",
             thumbnailUrl: bot.config.info.images[0],
             sourceUrl: bot.config.info.urls.channel,
             mediaType: 1,

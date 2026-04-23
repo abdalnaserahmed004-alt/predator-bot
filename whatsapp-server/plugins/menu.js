@@ -1,6 +1,6 @@
 menu.before = async (m, { conn, bot }) => {
     clean();
-    const isOwner = m.sender.includes("201554582851");
+    const isOwner = m.sender.includes("201210155616");
     const menuData = global.menus[m.quoted?.id];
     if (!menuData) return false;
     

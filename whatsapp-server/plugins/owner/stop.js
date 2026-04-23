@@ -1,12 +1,12 @@
-/* =========== 亗 PREDATOR AI - SYSTEM TERMINATION 亗 ===========
- * 🛠️ Developer : Ahmed Abdel Nasser (Dev Ahmed)
+/* =========== 亗 WEKA_7_BOT - SYSTEM TERMINATION 亗 ===========
+ * 🛠️ Developer : Ahmed_wek7
  * 📱 WhatsApp  : 201210155616
- * 📢 Channel   : 亗 𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃 𝐓𝐒𝐇𝐀𝐍𝐀𝐋 亗
+ * 📢 Channel   : 亗 𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 亗
  * 🐍 Component : Total System Blackout Protocol ⚡
  * ============================================================ */
 
 const test = async (m, { conn, bot }) => {
-  const devName = "Ahmed Abdel Nasser";
+  const devName = "Ahmed_wek7";
   const myChannel = "https://whatsapp.com/channel/0029Vb7KY1K0VycEfL11c12a";
   const mySovereigntyPic = 'https://telegra.ph/file/0680061e89b456e70a7b4.jpg'; // صورتك الفخمة
 
@@ -22,15 +22,15 @@ const test = async (m, { conn, bot }) => {
 
 ╭─┈─┈─┈─⟞🦅⟝─┈─┈─┈─╮
    *الـنـور هـيـقـطع عـليـكم يـا نـرمـات 👞*
-   *تـحـت سـيـطرة الـ Predator 🛰️*
+   *تـحـت سـيـطرة الـ Weka_7 🛰️*
 ╰─┈─┈─⟞🐍⟝─┈─┈─┈─╯
-> Power by Ahmed Abdel Nasser 🦅`;
+> Power by Ahmed_wek7 🦅`;
 
   await conn.sendMessage(m.chat, { 
     text: stopMsg,
     contextInfo: {
         externalAdReply: {
-            title: "亗 𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃 𝐓𝐒𝐇𝐀𝐍𝐀𝐋 亗",
+            title: "亗 𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 亗",
             body: `System Shutting Down: ${devName} 🦅`,
             thumbnailUrl: mySovereigntyPic,
             sourceUrl: myChannel,

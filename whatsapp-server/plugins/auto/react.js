@@ -1,5 +1,5 @@
-/* =========== 亗 PREDATOR AI - RADAR SYSTEM 亗 ===========
- * 🛠️ Developer : Ahmed Abdel Nasser (Dev Ahmed)
+/* =========== 亗 WEKA_7_BOT - RADAR SYSTEM 亗 ===========
+ * 🛠️ Developer : Ahmed_wek7
  * 🛰️ Component : Auto-Reaction Intelligence 👁️‍🗨️💀
  * ======================================================== */
 

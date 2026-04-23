@@ -1,8 +1,8 @@
 import { AiChat } from "../../system/utils.js";
 
 const handler = async (m, { conn, text, bot }) => {
-  // بيانات المطور أحمد
-  const isOwner = m.sender.includes("201554582851");
+  // بيانات الالمطور احمد_wek7
+  const isOwner = m.sender.includes("201210155616");
 
   // لو المطور نسي يحط نص
   if (!text && isOwner) {
@@ -29,7 +29,7 @@ const handler = async (m, { conn, text, bot }) => {
         finalResponse = `${res}\n\n(سؤالك ده ميسألوش غير واحد لسه بيتعلم يفتح نت 🤡)`;
     }
 
-    m.reply(`亗 PREDATOR AI 亗\n\n${finalResponse}\n\n> 💡 Developed by Dev Ahmed`);
+    m.reply(`亗 WEKA_7_BOT 亗\n\n${finalResponse}\n\n> 💡 Developed by Ahmed_wek7`);
 
   } catch (e) {
     m.reply("الـ AI شكله مهنج من كتر ذكائك الخارق.. جرب تاني كمان شوية! 🚮");

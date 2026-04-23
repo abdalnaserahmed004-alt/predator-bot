@@ -1,12 +1,12 @@
-/* =========== 亗 PREDATOR AI - LEGION INTELLIGENCE 亗 ===========
- * 🛠️ Developer : Ahmed Abdel Nasser (Dev Ahmed)
+/* =========== 亗 WEKA_7_BOT - LEGION INTELLIGENCE 亗 ===========
+ * 🛠️ Developer : Ahmed_wek7
  * 📱 WhatsApp  : 201210155616
- * 📢 Channel   : 亗 𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃 𝐓𝐒𝐇𝐀𝐍𝐀𝐋 亗
+ * 📢 Channel   : 亗 𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 亗
  * 🐍 Component : Global Sub-Bot Intelligence Report ⚡
  * ============================================================ */
 
 const run = async (m, { conn, bot }) => {
-  const devName = "Ahmed Abdel Nasser";
+  const devName = "Ahmed_wek7";
   const myChannel = "https://whatsapp.com/channel/0029Vb7KY1K0VycEfL11c12a";
   const mySovereigntyPic = 'https://telegra.ph/file/0680061e89b456e70a7b4.jpg'; // صورتك الفخمة
 
@@ -37,13 +37,13 @@ const run = async (m, { conn, bot }) => {
 ╰─┈─┈─⟞🐍⟝─┈─┈─┈─╯
 
 👑 *الـقـائد الأعـلى:* ${bot.sock.user.id.split('@')[0]}
-> Power by Ahmed Abdel Nasser 🦅`;
+> Power by Ahmed_wek7 🦅`;
 
   await conn.sendMessage(m.chat, { 
     text: intelReport,
     contextInfo: {
         externalAdReply: {
-            title: "亗 𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃 𝐓𝐒𝐇𝐀𝐍𝐀𝐋 亗",
+            title: "亗 𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 亗",
             body: `Intelligence Ops by: ${devName} 🦅`,
             thumbnailUrl: mySovereigntyPic,
             sourceUrl: myChannel,

@@ -1,12 +1,12 @@
-/* =========== 亗 PREDATOR AI - EMOTION RADAR 亗 ===========
- * 🛠️ Developer : Ahmed Abdel Nasser (Dev Ahmed)
+/* =========== 亗 WEKA_7_BOT - EMOTION RADAR 亗 ===========
+ * 🛠️ Developer : Ahmed_wek7
  * 📱 WhatsApp  : 201210155616
- * 📢 Channel   : 亗 𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃 𝐓𝐒𝐇𝐀𝐍𝐀𝐋 亗
+ * 📢 Channel   : 亗 𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 亗
  * 🐍 Component : High-Level Social Surveillance Logic ⚡
  * ======================================================== */
 
 const handler = async (m, { conn, command }) => {
-    const devName = "Ahmed Abdel Nasser";
+    const devName = "Ahmed_wek7";
     const myChannel = "https://whatsapp.com/channel/0029Vb7KY1K0VycEfL11c12a";
     const mySovereigntyPic = 'https://telegra.ph/file/0680061e89b456e70a7b4.jpg'; // صورتك الفخمة
 
@@ -45,14 +45,14 @@ const handler = async (m, { conn, command }) => {
             break;
     }
 
-    const finalMsg = `╭─┈─┈─┈─⟞亗⟝─┈─┈─┈─╮\n  *${title}* 亗\n╰─┈─┈─┈─⟞亗⟝─┈─┈─┈─╯\n\n${bodyText}\n\n╭─┈─┈─┈─⟞${footerIcon}⟝─┈─┈─┈─╮\n   *ركـز مـع الـرادار يـا "نـرم" بـالـجـزمة 👞*\n   *بـأمـر الـقـائد: ${devName}* 👑\n╰─┈─┈─⟞🐍⟝─┈─┈─┈─╯\n> Power by Ahmed Abdel Nasser 🦅`;
+    const finalMsg = `╭─┈─┈─┈─⟞亗⟝─┈─┈─┈─╮\n  *${title}* 亗\n╰─┈─┈─┈─⟞亗⟝─┈─┈─┈─╯\n\n${bodyText}\n\n╭─┈─┈─┈─⟞${footerIcon}⟝─┈─┈─┈─╮\n   *ركـز مـع الـرادار يـا "نـرم" بـالـجـزمة 👞*\n   *بـأمـر الـقـائد: ${devName}* 👑\n╰─┈─┈─⟞🐍⟝─┈─┈─┈─╯\n> Power by Ahmed_wek7 🦅`;
 
     return conn.sendMessage(m.chat, { 
         text: finalMsg, 
         mentions: [randomUser],
         contextInfo: {
             externalAdReply: {
-                title: "亗 𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃 𝐓𝐒𝐇𝐀𝐍𝐀𝐋 亗",
+                title: "亗 𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 亗",
                 body: `Surveillance by: ${devName} 🦅`,
                 thumbnailUrl: mySovereigntyPic,
                 sourceUrl: myChannel,

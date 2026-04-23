@@ -1,7 +1,7 @@
-/* =========== 亗 PREDATOR AI - SONIC EXTRACTION 亗 ===========
- * 🛠️ Developer : Ahmed Abdel Nasser (Dev Ahmed)
+/* =========== 亗 WEKA_7_BOT - SONIC EXTRACTION 亗 ===========
+ * 🛠️ Developer : Ahmed_wek7
  * 📱 WhatsApp  : 201210155616
- * 📢 Channel   : 亗 𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃 𝐓𝐒𝐇𝐀𝐍𝐀𝐋 亗
+ * 📢 Channel   : 亗 𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 亗
  * 🐍 Component : High-Fidelity Audio Stream Isolator ⚡
  * ======================================================== */
 
@@ -13,7 +13,7 @@ import { promisify } from "util";
 const execAsync = promisify(exec);
 
 const toAudio = async (m, { conn }) => {
-  const devName = "Ahmed Abdel Nasser";
+  const devName = "Ahmed_wek7";
   const myChannel = "https://whatsapp.com/channel/0029Vb7KY1K0VycEfL11c12a";
   const mySovereigntyPic = 'https://telegra.ph/file/0680061e89b456e70a7b4.jpg'; // صورتك الفخمة
 
@@ -22,7 +22,7 @@ const toAudio = async (m, { conn }) => {
     const mime = (q.msg || q).mimetype || '';
 
     if (!/video|audio/.test(mime)) {
-      return m.reply(`*⚠️ يـا "نـرم" رد عـلى فـيديو عـشان الـ Predator يـعـزلـك الـصوت بـالـجـزمـة! 🤡*`);
+      return m.reply(`*⚠️ يـا "نـرم" رد عـلى فـيديو عـشان الـ Weka_7 يـعـزلـك الـصوت بـالـجـزمـة! 🤡*`);
     }
 
     await m.react("🎙️");
@@ -38,7 +38,7 @@ const toAudio = async (m, { conn }) => {
     // تنفيذ عملية العزل التقني للذبذبات
     await execAsync(`ffmpeg -i "${inputFile}" -vn -acodec libmp3lame -q:a 2 "${outputFile}" -y`);
 
-    const successMsg = `╭─┈─┈─┈─⟞亗⟝─┈─┈─┈─╮\n  *🎵 تـم عـزل الـذبـذبـات* 亗\n╰─┈─┈─┈─⟞亗⟝─┈─┈─┈─╯\n\n👑 *بـأمـر الـقـائد ${devName}:*\n┃ ➲ الـحـالـة: اسـتـخراج صـوتـي عـالي الـدقة\n\n> الـ Predator يـسـحب الأثـر الـصوتي 🦅`;
+    const successMsg = `╭─┈─┈─┈─⟞亗⟝─┈─┈─┈─╮\n  *🎵 تـم عـزل الـذبـذبـات* 亗\n╰─┈─┈─┈─⟞亗⟝─┈─┈─┈─╯\n\n👑 *بـأمـر الـقـائد ${devName}:*\n┃ ➲ الـحـالـة: اسـتـخراج صـوتـي عـالي الـدقة\n\n> الـ Weka_7 يـسـحب الأثـر الـصوتي 🦅`;
 
     await conn.sendMessage(m.chat, { 
       audio: fs.readFileSync(outputFile), 
@@ -48,7 +48,7 @@ const toAudio = async (m, { conn }) => {
           mentionedJid: [m.sender],
           forwardedNewsletterMessageInfo: {
               newsletterJid: '120363225356834044@newsletter',
-              newsletterName: '亗 𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃 𝐓𝐒𝐇𝐀𝐍𝐀𝐋 亗',
+              newsletterName: '亗 𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 亗',
               serverMessageId: 100
           },
           externalAdReply: {

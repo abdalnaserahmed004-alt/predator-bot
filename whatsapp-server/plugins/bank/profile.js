@@ -1,5 +1,5 @@
-/* =========== 亗 PREDATOR AI - USER IDENTITY 亗 ===========
- * 🛠️ Developer : Ahmed Abdel Nasser (Dev Ahmed)
+/* =========== 亗 WEKA_7_BOT - USER IDENTITY 亗 ===========
+ * 🛠️ Developer : Ahmed_wek7
  * 🛰️ Component : Advanced Profile System 🛡️👤
  * ======================================================== */
 
@@ -36,7 +36,7 @@ async function handler(m, { conn, bot }) {
   *👤 هـويـة الـمـسـتـخـدم 👤*
 ╰─┈─┈─┈─⟞亗⟝─┈─┈─┈─╯
 
-👑 *تـحـيـة مـن Ahmed Abdel Nasser لـ:*
+👑 *تـحـيـة مـن Ahmed_wek7 لـ:*
 ┃ ➲ ✨ *${pushName}* ✨
 
 ┃ 📱 *الـرقـم:* ${phoneNumber}
@@ -54,7 +54,7 @@ async function handler(m, { conn, bot }) {
    *بـأمر الـمـطور أحمد عبد الناصر*
    *اسـتمر فـي الـتـفاعل لـتـرتقي!*
 ╰─┈─┈─┈─⟞🦅⟝─┈─┈─┈─╯
-> Developed by Ahmed Abdel Nasser 🦅`;
+> Developed by Ahmed_wek7 🦅`;
     
     const cfg = bot.config.info;
     await conn.sendMessage(m.chat, {
@@ -71,7 +71,7 @@ async function handler(m, { conn, bot }) {
             },
             externalAdReply: {
                 title: `亗 𝐏𝐑𝐄𝐃𝐀𝐓𝐎𝐑 𝐈𝐃𝐄𝐍𝐓𝐈𝐓𝐘 亗`,
-                body: `Developer: Ahmed Abdel Nasser`,
+                body: `Developer: Ahmed_wek7`,
                 thumbnailUrl: profilePic,
                 sourceUrl: '',
                 mediaType: 1,

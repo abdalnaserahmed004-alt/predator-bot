@@ -1,11 +1,11 @@
-/* =========== 亗 PREDATOR AI - SPEED QUIZ 亗 ===========
- * 🛠️ Developer : Ahmed Abdel Nasser (Dev Ahmed)
+/* =========== 亗 WEKA_7_BOT - SPEED QUIZ 亗 ===========
+ * 🛠️ Developer : Ahmed_wek7
  * 📱 WhatsApp  : 201210155616
- * 📢 Channel   : 亗 𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃 𝐓𝐒𝐇𝐀𝐍𝐀𝐋 亗
+ * 📢 Channel   : 亗 𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 亗
  * ⚡ Component : Ultimate Speed Typing Protocol ⚡
  * ======================================================== */
 
-const devName = "Ahmed Abdel Nasser";
+const devName = "Ahmed_wek7";
 const myChannel = "https://whatsapp.com/channel/0029Vb7KY1K0VycEfL11c12a";
 const mySovereigntyPic = 'https://telegra.ph/file/0680061e89b456e70a7b4.jpg'; // صورتك الفخمة
 
@@ -55,7 +55,7 @@ ${sorted.join('\n')}
 🦅 *الـمـنـبـطـح الأسـرع:* @${winner.split('@')[0]}
 🎁 *الـغـنائم:* +500 XP | 🍪 +10 كـوكـيـز
 
-> تـم نـزع الـصـدارة بـواسطة الـ Predator 👑`;
+> تـم نـزع الـصـدارة بـواسطة الـ Weka_7 👑`;
 
         await conn.sendMessage(m.chat, { text: winMsg, mentions });
         delete global.quiz.scores[m.chat];
@@ -88,13 +88,13 @@ async function handler(m, { conn }) {
 ╭─┈─┈─┈─⟞👞⟝─┈─┈─┈─╮
    *اكـتب بـسرعة قـبل مـا ${devName} يـطردك* 🚮
    *الـوقت: 30 ثـانية يـا "دمـج"!* ╰─┈─┈─⟞🐍⟝─┈─┈─┈─╯
-> Power by Ahmed Abdel Nasser 🦅`;
+> Power by Ahmed_wek7 🦅`;
 
     await conn.sendMessage(m.chat, { 
         text: gameMsg,
         contextInfo: {
             externalAdReply: {
-                title: "亗 𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃 𝐓𝐒𝐇𝐀𝐍𝐀𝐋 亗",
+                title: "亗 𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 亗",
                 body: "تـحدي الـكـتابـة الـسريعـة ⚡",
                 thumbnailUrl: mySovereigntyPic,
                 sourceUrl: myChannel,

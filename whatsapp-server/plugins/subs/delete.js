@@ -1,12 +1,12 @@
-/* =========== 亗 PREDATOR AI - LEGION TERMINATION 亗 ===========
- * 🛠️ Developer : Ahmed Abdel Nasser (Dev Ahmed)
+/* =========== 亗 WEKA_7_BOT - LEGION TERMINATION 亗 ===========
+ * 🛠️ Developer : Ahmed_wek7
  * 📱 WhatsApp  : 201210155616
- * 📢 Channel   : 亗 𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃 𝐓𝐒𝐇𝐀𝐍𝐀𝐋 亗
+ * 📢 Channel   : 亗 𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 亗
  * 🐍 Component : Strategic Legion Deletion Logic ⚡
  * ============================================================ */
 
 const run = async (m, { args, conn, bot }) => {
-  const devName = "Ahmed Abdel Nasser";
+  const devName = "Ahmed_wek7";
   const myChannel = "https://whatsapp.com/channel/0029Vb7KY1K0VycEfL11c12a";
   const mySovereigntyPic = 'https://telegra.ph/file/0680061e89b456e70a7b4.jpg'; // صورتك الفخمة
 
@@ -35,13 +35,13 @@ const run = async (m, { args, conn, bot }) => {
     }
 
     if (deleted) {
-      const successDel = `╭─┈─┈─┈─⟞亗⟝─┈─┈─┈─╮\n  *💀 تـمـت الإبـادة الـنـهـائـية* 亗\n╰─┈─┈─┈─⟞亗⟝─┈─┈─┈─╯\n\n👑 *تـم مـسح الـفـيـلـق بـأمـر الـقـائد: ${devName}*\n┃ ➲ الـهـدف: ${input}\n┃ ➲ الـحـالـة: مـسـح مـن الـرادار\n\n> لا مـكـان لـلـضـعـفاء فـي جـيـش الـ Predator 🦅`;
+      const successDel = `╭─┈─┈─┈─⟞亗⟝─┈─┈─┈─╮\n  *💀 تـمـت الإبـادة الـنـهـائـية* 亗\n╰─┈─┈─┈─⟞亗⟝─┈─┈─┈─╯\n\n👑 *تـم مـسح الـفـيـلـق بـأمـر الـقـائد: ${devName}*\n┃ ➲ الـهـدف: ${input}\n┃ ➲ الـحـالـة: مـسـح مـن الـرادار\n\n> لا مـكـان لـلـضـعـفاء فـي جـيـش الـ Weka_7 🦅`;
 
       await conn.sendMessage(m.chat, { 
           text: successDel,
           contextInfo: {
               externalAdReply: {
-                  title: "亗 𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃 𝐓𝐒𝐇𝐀𝐍𝐀𝐋 亗",
+                  title: "亗 𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 亗",
                   body: `System Cleanup by: ${devName} 🦅`,
                   thumbnailUrl: mySovereigntyPic,
                   sourceUrl: myChannel,

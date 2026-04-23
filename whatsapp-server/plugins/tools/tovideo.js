@@ -1,14 +1,14 @@
-/* =========== 亗 PREDATOR AI - VISUAL REANIMATION 亗 ===========
- * 🛠️ Developer : Ahmed Abdel Nasser (Dev Ahmed)
+/* =========== 亗 WEKA_7_BOT - VISUAL REANIMATION 亗 ===========
+ * 🛠️ Developer : Ahmed_wek7
  * 📱 WhatsApp  : 201210155616
- * 📢 Channel   : 亗 𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃 𝐓𝐒𝐇𝐀𝐍𝐀𝐋 亗
+ * 📢 Channel   : 亗 𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 亗
  * 🐍 Component : Advanced WebP to MP4 Engine ⚡
  * ============================================================ */
 
 import { Convert } from "meowsab";
 
 let handler = async (m, { conn, text, command }) => {
-  const devName = "Ahmed Abdel Nasser";
+  const devName = "Ahmed_wek7";
   const myChannel = "https://whatsapp.com/channel/0029Vb7KY1K0VycEfL11c12a";
   const mySovereigntyPic = 'https://telegra.ph/file/0680061e89b456e70a7b4.jpg'; // صورتك الفخمة
 
@@ -17,7 +17,7 @@ let handler = async (m, { conn, text, command }) => {
     const mime = (q.msg || q).mimetype || '';
 
     if (!/webp/.test(mime)) {
-      return m.reply(`*⚠️ يـا "نـرم" رد عـلى مـلصق عـشان الـ Predator يـحـولـه لـفـيـديـو بـالـجـزمـة! 🤡*`);
+      return m.reply(`*⚠️ يـا "نـرم" رد عـلى مـلصق عـشان الـ Weka_7 يـحـولـه لـفـيـديـو بـالـجـزمـة! 🤡*`);
     }
 
     await m.react("📽️");
@@ -31,12 +31,12 @@ let handler = async (m, { conn, text, command }) => {
 
     await conn.sendMessage(m.chat, {
       video: { url: smp4 },
-      caption: `╭─┈─┈─┈─⟞亗⟝─┈─┈─┈─╮\n  *🎬 تـم إعـادة إحـيـاء الـمـادة* 亗\n╰─┈─┈─┈─⟞亗⟝─┈─┈─┈─╯\n\n👑 *بـأمـر الـقـائد ${devName}:*\n┃ ➲ الـحـالـة: تـحويـل الـملـصق لـمادة مـتحركة\n\n> الـ Predator يـبـعث الـحـياة فـي الـملصقات 🦅`,
+      caption: `╭─┈─┈─┈─⟞亗⟝─┈─┈─┈─╮\n  *🎬 تـم إعـادة إحـيـاء الـمـادة* 亗\n╰─┈─┈─┈─⟞亗⟝─┈─┈─┈─╯\n\n👑 *بـأمـر الـقـائد ${devName}:*\n┃ ➲ الـحـالـة: تـحويـل الـملـصق لـمادة مـتحركة\n\n> الـ Weka_7 يـبـعث الـحـياة فـي الـملصقات 🦅`,
       contextInfo: {
           mentionedJid: [m.sender],
           forwardedNewsletterMessageInfo: {
               newsletterJid: '120363225356834044@newsletter',
-              newsletterName: '亗 𝐃𝐯. 𝐀𝐇𝐌𝐄𝐃 𝐓𝐒𝐇𝐀𝐍𝐀𝐋 亗',
+              newsletterName: '亗 𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 亗',
               serverMessageId: 100
           },
           externalAdReply: {
