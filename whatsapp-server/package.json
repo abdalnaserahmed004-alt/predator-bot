@@ -1,20 +1,22 @@
 {
   "name": "weka-7-bot",
   "version": "2.0.0",
-  "description": "亗 𝐏𝐑𝐄𝐃𝐀𝐓𝐎𝐑 𝐀𝐈 - 𝐓𝐇𝐄 𝐔𝐋𝐓𝐈𝐌𝐀𝐓𝐄 𝐃𝐄𝐒𝐓𝐑𝐔𝐂𝐓𝐈𝐎𝐍 𝐒𝐘𝐒𝐓𝐄𝐌 亗",
-  "main": "index.js",
+  "description": "亗 WEKA_7_BOT - WhatsApp Bot Framework 亗",
+  "main": "server.js",
   "type": "module",
   "scripts": {
-    "start": "node index.js"
+    "start": "node server.js",
+    "bot": "node index.js"
   },
   "keywords": [
     "whatsapp-bot",
-    "weka-7-bot",
-    "dev-ahmed_wek7",
-    "hacking-system"
+    "weka-7-bot"
   ],
   "author": "Ahmed_wek7",
   "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
   "dependencies": {
     "meowsab": "https://github.com/deveni0/ws/tarball/main",
     "sharp": "https://github.com/deveni0/sharp-tmx/tarball/main",
@@ -23,7 +25,9 @@
     "file-type": "^18.0.0",
     "form-data": "^4.0.5",
     "qs": "*",
-    "wa-sticker-formatter": "^4.3.2"
+    "wa-sticker-formatter": "^4.3.2",
+    "express": "^4.19.2",
+    "axios": "^1.7.7"
   },
   "overrides": {
     "sharp": "https://github.com/deveni0/sharp-tmx/tarball/main"
