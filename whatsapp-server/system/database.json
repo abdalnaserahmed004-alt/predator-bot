@@ -1,0 +1,38 @@
+{
+  "users": {
+    "default": {
+      "name": "User",
+      "exp": 0,
+      "level": 0,
+      "role": "Member",
+      "warn": 0,
+      "premium": false,
+      "banned": false,
+      "lastClaim": 0
+    }
+  },
+  "groups": {
+    "default": {
+      "name": "",
+      "welcome": true,
+      "left": false,
+      "antilink": false,
+      "nsfw": false,
+      "mute": false
+    }
+  },
+  "settings": {
+    "public": true,
+    "autoRead": false,
+    "readStatus": true,
+    "online": true,
+    "maintenance": false,
+    "selfbot": false
+  },
+  "stats": {
+    "totalCommands": 0,
+    "totalMessages": 0,
+    "uptime": 0
+  },
+  "history": []
+}
