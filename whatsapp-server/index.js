@@ -57,9 +57,9 @@ client.config.info = {
     nameChannel: "亗 𝐀𝐇𝐌𝐄𝐃_𝐖𝐄𝐊𝟕 亗 🦅",
     idChannel: "120363225356834044@newsletter",
     urls: {
-        repo: "https://github.com/abdalnaserahmed_wek7004-alt/weka_7-bot",
+        repo: "https://github.com/abdalnaserahmed004-alt/predator-bot",
         channel: "https://whatsapp.com/channel/0029Vb7KY1K0VycEfL11c12a",
-        telegram: "https://t.me/DevAhmed_wek7_ZDA"
+        telegram: "https://t.me/DevAhmed_ZDA"
     },
     copyright: {
         pack: '亗 𝐖𝐄𝐊𝐀_𝟕_𝐁𝐎𝐓 亗',
