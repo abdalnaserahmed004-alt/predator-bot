@@ -177,8 +177,9 @@ export default function Dashboard() {
         </div>
 
         <Tabs defaultValue="whatsapp">
-          <TabsList className="grid grid-cols-5 w-full max-w-3xl">
+          <TabsList className="grid grid-cols-6 w-full max-w-4xl">
             <TabsTrigger value="whatsapp"><Smartphone className="w-4 h-4 mr-1" />واتساب</TabsTrigger>
+            <TabsTrigger value="devs"><ShieldCheck className="w-4 h-4 mr-1" />مطورون</TabsTrigger>
             <TabsTrigger value="messages"><MessageSquare className="w-4 h-4 mr-1" />الرسائل</TabsTrigger>
             <TabsTrigger value="send"><Send className="w-4 h-4 mr-1" />إرسال</TabsTrigger>
             <TabsTrigger value="users"><Users className="w-4 h-4 mr-1" />مستخدمون</TabsTrigger>
