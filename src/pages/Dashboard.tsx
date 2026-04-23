@@ -12,12 +12,13 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@
 import { Badge } from '@/components/ui/badge';
 import { Switch } from '@/components/ui/switch';
 import { toast } from 'sonner';
-import { Bot, LogOut, Send, MessageSquare, Users, Terminal, Ban, CheckCircle2, Trash2, Smartphone } from 'lucide-react';
+import { Bot, LogOut, Send, MessageSquare, Users, Terminal, Ban, CheckCircle2, Trash2, Smartphone, ShieldCheck } from 'lucide-react';
 
 interface Msg { id: string; chat_id: number; direction: 'in' | 'out'; text: string | null; created_at: string; }
 interface TUser { id: string; chat_id: number; username: string | null; first_name: string | null; is_blocked: boolean; last_seen_at: string; }
 interface Cmd { id: string; command: string; response: string; enabled: boolean; }
 interface WALinked { id: string; telegram_chat_id: number; full_name: string; phone_number: string; governorate: string; status: string; pairing_code: string | null; last_connected_at: string | null; last_error: string | null; created_at: string; }
+interface Dev { id: string; phone_number: string; display_name: string | null; is_active: boolean; notes: string | null; created_at: string; }
 
 export default function Dashboard() {
   const { user, isAdmin, loading, signOut } = useAuth();
@@ -26,6 +27,7 @@ export default function Dashboard() {
   const [users, setUsers] = useState<TUser[]>([]);
   const [commands, setCommands] = useState<Cmd[]>([]);
   const [waUsers, setWaUsers] = useState<WALinked[]>([]);
+  const [devs, setDevs] = useState<Dev[]>([]);
 
   const [sendChatId, setSendChatId] = useState('');
   const [sendText, setSendText] = useState('');
@@ -34,22 +36,27 @@ export default function Dashboard() {
   const [newCmd, setNewCmd] = useState('');
   const [newResp, setNewResp] = useState('');
 
+  const [newDevPhone, setNewDevPhone] = useState('');
+  const [newDevName, setNewDevName] = useState('');
+
   useEffect(() => {
     if (!loading && !user) nav('/auth');
     if (!loading && user && !isAdmin) toast.error('ليس لديك صلاحيات Admin');
   }, [user, loading, isAdmin, nav]);
 
   const loadAll = async () => {
-    const [m, u, c, w] = await Promise.all([
+    const [m, u, c, w, d] = await Promise.all([
       supabase.from('telegram_messages').select('*').order('created_at', { ascending: false }).limit(100),
       supabase.from('telegram_users').select('*').order('last_seen_at', { ascending: false }),
       supabase.from('bot_commands').select('*').order('created_at', { ascending: false }),
       supabase.from('whatsapp_linked_users').select('*').order('created_at', { ascending: false }),
+      supabase.from('bot_developers').select('*').order('created_at', { ascending: false }),
     ]);
     if (m.data) setMessages(m.data as any);
     if (u.data) setUsers(u.data as any);
     if (c.data) setCommands(c.data as any);
     if (w.data) setWaUsers(w.data as any);
+    if (d.data) setDevs(d.data as any);
   };
 
   useEffect(() => {
@@ -114,6 +121,28 @@ export default function Dashboard() {
   const delWa = async (id: string) => {
     if (!confirm('حذف هذا المستخدم نهائياً؟')) return;
     await supabase.from('whatsapp_linked_users').delete().eq('id', id);
+    loadAll();
+  };
+
+  const addDev = async () => {
+    const phone = newDevPhone.trim().replace(/\D/g, '');
+    if (!phone) return toast.error('أدخل رقم صحيح');
+    const { error } = await supabase.from('bot_developers').insert({
+      phone_number: phone,
+      display_name: newDevName.trim() || null,
+    });
+    if (error) return toast.error(error.message);
+    setNewDevPhone(''); setNewDevName(''); toast.success('تم إضافة المطور'); loadAll();
+  };
+
+  const toggleDev = async (d: Dev) => {
+    await supabase.from('bot_developers').update({ is_active: !d.is_active }).eq('id', d.id);
+    loadAll();
+  };
+
+  const delDev = async (id: string) => {
+    if (!confirm('حذف هذا المطور؟')) return;
+    await supabase.from('bot_developers').delete().eq('id', id);
     loadAll();
   };
 
