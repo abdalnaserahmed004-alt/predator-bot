@@ -74,12 +74,25 @@ Deno.serve(async (req) => {
   };
 
   // --- WhatsApp server client ---
+  const normalizedServerUrl = (() => {
+    if (!WHATSAPP_SERVER_URL) return null;
+    const u = WHATSAPP_SERVER_URL.trim();
+    if (!/^https?:\/\//i.test(u)) return null; // invalid (e.g. someone pasted a UUID)
+    return u.replace(/\/+$/, '');
+  })();
+
   const waRequest = async (path: string, payload: any) => {
     if (!WHATSAPP_SERVER_URL) {
-      return { ok: false, error: 'WhatsApp server not configured yet. Admin must set WHATSAPP_SERVER_URL.' };
+      return { ok: false, error: 'WhatsApp server not configured. Set WHATSAPP_SERVER_URL secret.' };
+    }
+    if (!normalizedServerUrl) {
+      return {
+        ok: false,
+        error: `WHATSAPP_SERVER_URL مش صحيح، لازم يبدأ بـ https:// (مش UUID). القيمة الحالية تبدأ بـ: "${WHATSAPP_SERVER_URL.slice(0, 40)}"`,
+      };
     }
     try {
-      const r = await fetch(`${WHATSAPP_SERVER_URL}${path}`, {
+      const r = await fetch(`${normalizedServerUrl}${path}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
